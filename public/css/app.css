@@ -1,0 +1,110 @@
+body {
+  background-image: url(/images/negobodygreek.jpg?fb6f57beb244b349af29ea2531978f9d);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content {
+  background-color: #000000e3;
+}
+
+.title {
+  color: goldenrod;
+  text-align: center;
+  font-size: 68px;
+  margin: auto;
+  font-family: "Cinzel", serif;
+}
+
+#nav-me {
+  background-color: #67676773 !important;
+}
+
+.navAll {
+  color: goldenrod !important;
+  font-family: "Spirax", cursive;
+  font-size: 25px;
+  background-color: #060606;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid white;
+}
+
+.navAll:hover {
+  text-decoration: none;
+  color: red !important;
+  background-color: whitesmoke;
+  border-top: 5px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 5px solid black;
+}
+
+.form-inline {
+  position: relative;
+  left: -25px;
+}
+
+.dropdown-menu {
+  left: 12px;
+  text-align: center;
+  background: rgba(1, 1, 8, 0.82);
+}
+
+.dropdown-item {
+  background: rgba(1, 1, 8, 0);
+  color: white;
+}
+
+.btn-outline {
+  color: whitesmoke;
+  background-color: goldenrod;
+}
+
+.btn-outline:hover {
+  color: goldenrod;
+  background-color: whitesmoke;
+}
+
+.search-field {
+  margin: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .search-field {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 834px) {
+  .search-field {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .search-field {
+    margin-right: 135px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navAll {
+    font-size: 16px;
+  }
+}
+
+h2 {
+  text-align: center;
+  color: blanchedalmond;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
