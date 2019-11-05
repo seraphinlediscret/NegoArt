@@ -9,10 +9,11 @@
        <!-- Fonts -->
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-       <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
-       <link href="https://fonts.googleapis.com/css?family=Spirax&display=swap" rel="stylesheet"> 
 
-      
+       <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Cormorant+Infant&display=swap" rel="stylesheet"> 
+       <link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet"> 
+
     </head>
     <body>
 
@@ -37,37 +38,28 @@
                 </div>
             </div>
             <!--///navbar//-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-me">
-                <a class="navbar-brand navAll" href="/">Accueil</a>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-me">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon" style="backgroundcolor:white;"></span>
                 </button>
-              
+               <a class="navbar-brand navAll navMain" href="/">Accueil</a>
+                <a href="{{ asset('/connexion')}}" class="img-connexion"><img src="img/icon/usericon.png" alt=""></a>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link navAll" href="{{ asset('/rules')}}">Les Règles<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link navAll" href="{{ asset('/galleries')}}">Les Galleries<span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item active">
+                    
+                      <li class="nav-item active px-md-3">
                           <a class="nav-link navAll" href="{{ asset('/art')}}">Les Oeuvres<span class="sr-only">(current)</span></a>
                         </li>
-                    
-                    {{-- <li class="nav-item">
-                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li> --}}
-                     <li class="nav-item dropdown">
-                      <a class="navbar dropdown-toggle navAll nav-connexion" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Connexion
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" onmouseover="this.style.background='goldenrod';this.style.color='white';" onmouseout="this.style.background='rgba(1, 1, 8, 0)';this.style.color='white';">Je suis Galleriste</a>
-                        <a class="dropdown-item" href="#" onmouseover="this.style.background='goldenrod';this.style.color='white';" onmouseout="this.style.background='rgba(1, 1, 8, 0)';this.style.color='white';">Je suis Artiste</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" onmouseover="this.style.background='goldenrod';this.style.color='white';" onmouseout="this.style.background='rgba(1, 1, 8, 0)';this.style.color='white';">S'inscrire</a>
-                      </div>
+
+                        <li class="nav-item active px-md-3">
+                          <a class="nav-link navAll" href="{{ asset('/rules')}}">Comment ça marche ?<span class="sr-only">(current)</span></a>
+                        </li>
+
+                        {{-- <li class="nav-item active">
+                          <a class="nav-link navAll" href="{{ asset('/connexion')}}">Connexion et inscription<span class="sr-only">(current)</span></a>
+                        </li> --}}
+    
                     </li>
                   </ul>
                    <form class="my-2 my-lg-0 search-field">
@@ -77,7 +69,35 @@
                 </div>
               </nav>
         </div>
+
+        <div class="second-body">
         @yield('content')
+        </div>
+
+        <footer>
+          <div class="footer-content">
+            <div class="infos-footer f-one">
+              <a href="{{ asset('/rules')}}" class="footer-web">Conditions d'utilisation</a>
+              <a href="" class="footer-web">Mentions légales</a>
+              <a href="" class="footer-web">lorem</a>
+              <a href="" class="footer-web">lorem</a>
+            </div>
+
+            <div class="infos-footer f-two">
+              <a href="" class="footer-web">FAQ</a>
+              <a href="" class="footer-web">Guide d'utilisation</a>
+              <a href="" class="footer-web">Pourquoi négocier ?</a>
+              <a href="" class="footer-web">lorem</a>
+            </div>
+
+            <div class="infos-footer f-three">
+              <a href="" class="footer-web">Nous contacter</a>
+              <a href="" class="footer-web">Nos partenaires</a>
+              <a href="" class="footer-web">NegoPricing</a>
+              <a href="" class="footer-web">Qui sommes nous ?</a>
+            </div>
+          </div>
+        </footer>
     </body>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     <!---Bootstrap--->

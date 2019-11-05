@@ -1,4 +1,5 @@
 @extends('welcome')
 @section('content')
-<h2>La négociation</h2>
+
+<h2>La Négociation</h2>
 @endsection

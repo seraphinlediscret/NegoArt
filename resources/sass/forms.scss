@@ -1,0 +1,16 @@
+.myform{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-registration{
+    display: block;
+    margin: auto;
+}
+
+.btn{
+    background: goldenrod;
+}
+.rules-checked:hover{
+    text-decoration: none;
+}

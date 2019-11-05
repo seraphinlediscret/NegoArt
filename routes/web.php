@@ -31,3 +31,11 @@ Route::get('/appli', function () {
     return view('applinego/appli');
 });
 //////////////Users///////////////
+
+Route::get('/connexion', function () {
+    return view('users/connectpage');
+});
+
+Route::get('/registr', function () {
+    return view('users/registration');
+});
