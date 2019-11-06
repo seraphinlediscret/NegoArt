@@ -1,33 +1,24 @@
-.connect-choice{
+.connect-page{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.connect-login{
+    display: flex;
+    flex-direction: column;
+}
+
+.registration{
+    color: black;
+}
+.hr-connect{
+    width:1px; 
+    height:300px;
+    background-color: black;
 }
 
 @media screen and (max-width: 834px){
-    .connect-choice{
-        display: flex;
-        flex-direction: column;
-    }
-    .card-connexion{
-        margin-top: 10px;
-    }
-    }
-/////////card//////////
-.card-connexion:hover{
-    text-decoration: none;
-    box-shadow: 10px 5px 5px black;
-}
-.card-title{
-    color: black;
-    font-family: 'Alegreya SC', serif;
-    font-family: 'Cormorant Infant', serif;
-    font-weight: bold;
-}
-.card-text{
-    color: black;
-    font-family: 'Asap', sans-serif;
-}
+    
 //////////////button////////////////
 .btn-warning{
     display: block;
@@ -35,11 +26,23 @@
     text-align: center;
     margin-top:20px;
 }
-
-.btn-inscription{
-    width: 30%;
-}
 .img-connexion{
     margin-right: 26px;
 }
 
+}
+
+@media screen and (max-width: 500px){
+.connect-page{
+    display: flex;
+    flex-direction: column;
+    
+}
+.hr-connect{
+    width: 250px;
+height: 1px;
+}
+.registr-mobile{
+    margin-bottom: 40px;
+}
+}

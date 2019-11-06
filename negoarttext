@@ -20,3 +20,7 @@ pour chaque négociation : acheteur = règles de négociation
 suppr "Galleries"
 
 pour les oeuvres : paramètres [taille, largeur, poids, couleurs, matières, descriptif, thèmes, auteur, ]
+
+changer l'encart "s'inscrire" pour l'agrandir
+mettre une loupe pour l'encart recherche
+refaire footer

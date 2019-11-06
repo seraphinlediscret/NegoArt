@@ -37,8 +37,10 @@
                     Nego Art
                 </div>
             </div>
+
             <!--///navbar//-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-me">
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon" style="backgroundcolor:white;"></span>
                 </button>
@@ -48,27 +50,32 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                     
-                      <li class="nav-item active px-md-3">
+                      <li class="nav-item active">
                           <a class="nav-link navAll" href="{{ asset('/art')}}">Les Oeuvres<span class="sr-only">(current)</span></a>
                         </li>
 
-                        <li class="nav-item active px-md-3">
+                        <li class="nav-item active">
                           <a class="nav-link navAll" href="{{ asset('/rules')}}">Comment ça marche ?<span class="sr-only">(current)</span></a>
                         </li>
 
-                        {{-- <li class="nav-item active">
-                          <a class="nav-link navAll" href="{{ asset('/connexion')}}">Connexion et inscription<span class="sr-only">(current)</span></a>
-                        </li> --}}
-    
-                    </li>
+                        <li class="nav-item active">
+                          <a class="nav-link navAll" href="{{ asset('/rules')}}">Règles et conditions d'utilisation<span class="sr-only">(current)</span></a>
+                        </li> 
+                        
+                        <li class="nav-item active connect-block">
+                          <a class="nav-link navAll connect-nav " href="{{ asset('/connexion')}}">Connexion/Inscription<span class="sr-only">(current)</span></a>
+                        </li> 
                   </ul>
-                   <form class="my-2 my-lg-0 search-field">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Recherche..." aria-label="Search">
-                    <button class="btn btn-outline my-2 my-sm-0" type="submit">Recherche</button>
-                  </form>
                 </div>
               </nav>
-        </div>
+
+              {{-- search navbar --}}
+              {{-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-search" id="nav-me ">
+                <form class="my-2 my-lg-0 search-field" style="padding: 10px;">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Recherche..." aria-label="Search">
+                  <button class="btn btn-outline my-2 my-sm-0" type="submit">Recherche</button>
+                </form>
+              </nav> --}}
 
         <div class="second-body">
         @yield('content')
@@ -98,6 +105,7 @@
             </div>
           </div>
         </footer>
+
     </body>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     <!---Bootstrap--->
