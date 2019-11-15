@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/art', function () {
+Route::get('/artwork', function () {
     return view('artworks/artworks');
+});
+
+Route::get('/art', function () {
+    return view('artworks/allart');
 });
 
 Route::get('/galleries', function () {

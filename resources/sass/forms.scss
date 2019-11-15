@@ -5,12 +5,19 @@
 
 .form-registration{
     display: block;
-    margin: auto;
+    margin-left: 35%;
+    width: 45%;
 }
 
 .btn{
     background: goldenrod;
 }
+
 .rules-checked:hover{
     text-decoration: none;
+}
+
+//////////js////////
+#SIRET{
+    display: none;
 }

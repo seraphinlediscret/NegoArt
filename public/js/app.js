@@ -19237,6 +19237,357 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./header */ "./resources/js/header.js");
 
+__webpack_require__(/*! ./application.js */ "./resources/js/application.js");
+
+__webpack_require__(/*! ./timer.js */ "./resources/js/timer.js"); // require('../../public/js/registration.js/index.js');
+
+/***/ }),
+
+/***/ "./resources/js/application.js":
+/*!*************************************!*\
+  !*** ./resources/js/application.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var valid = document.getElementById("valid");
+var card = document.getElementById("confirm");
+var back = document.getElementById("back");
+var confirm = document.getElementById("conf");
+var negoweb = document.getElementById("app");
+var fields = document.getElementsByClassName("field");
+var open = document.getElementById("open");
+var allparam = document.getElementById("containerparam");
+var ixi = document.getElementById("ixi");
+var appli = document.getElementById("theapplinego");
+var exyt = document.getElementById("exyt");
+var well = document.getElementById("well");
+var priceini = document.getElementById("priceini");
+var divini = document.getElementById("divini");
+var validaction = document.getElementById("validaction");
+var accept = document.getElementById("accept");
+var refus = document.getElementById("refus");
+var pricewant = document.getElementById("pricewant");
+var visibbutton = document.getElementById("valprop");
+var yesorno = document.getElementById("yesorno");
+var stop = document.getElementById("stop");
+var thenego = document.getElementById("thenego");
+var theEND = document.getElementById("theEND"); //envoie de données//
+
+var priceshow = document.getElementById("validationCustom01"); //prix initial
+
+var trapshow = document.getElementById("validationCustom02"); //trappes
+
+var centshow = document.getElementById("validationCustom03"); //trappe %
+
+var tourshow = document.getElementById("validationCustom04"); //nombre de tour
+
+var priceminshow = document.getElementById("validationCustom05"); //prix minimum de vente
+
+var timeshow = document.getElementById("validationCustom06"); //le temps
+
+var actionshow = document.getElementById("validationCustom07"); //input
+//reception affichage de données //
+
+var showcount = document.getElementById("count"); ///le count du tableau
+
+var showprice = document.getElementById("showprice"); //prix initial
+
+var showbuy = document.getElementById("showbuy"); //acheteur
+
+var showwant = document.getElementById("showwant"); //prix proposé
+
+var showtour = document.getElementById("showtour"); //nombre de tour
+
+var showrab = document.getElementById("showrab"); // rabais
+
+var showtime = document.getElementById("minutes"); //timer
+
+var xprop = document.getElementById("xprop"); // value prop (25000)
+// array empty//
+
+var tablefind = []; // operation trappes //
+//let nbtrap = trapshow.value;
+
+var nbr = 4600; // remplacer par l'algo de Philippe
+
+var tableHidden = document.getElementById('table-hidden');
+var boxInfo = document.getElementById('allheaderelements');
+var acceptNEGO = document.getElementById("acceptNEGO"); /////validation paramètres////
+
+function checkAllValid() {
+  var allValid = true;
+
+  for (var i = 0; i < fields.length; i++) {
+    if (fields[i].validity.valueMissing) {
+      allValid = false;
+    }
+  }
+
+  return allValid;
+}
+
+function forcard(event) {
+  if (checkAllValid()) {
+    event.preventDefault();
+    card.style.display = "flex";
+    valid.style.display = "none";
+  } else {
+    alert("Veuillez remplir TOUS les champs du formulaire pour valider vos paramètres.");
+  }
+} ///retour///
+
+
+function ret() {
+  card.style.display = "none";
+  valid.style.display = "flex";
+} ///ouvrir les paramètres///
+
+
+function openParam() {
+  allparam.style.display = "initial";
+} ///confirmation des paramètres///
+
+
+function closeParam() {
+  allparam.style.display = "none";
+  card.style.display = "none";
+  appli.style.display = "initial";
+  open.style.display = "none";
+  well.style.display = "none";
+  divini.style.display = "initial";
+  console.log(trapshow.value + " trappes");
+  console.log(centshow.value + " % du prix minimum");
+  console.log(priceminshow.value + " prix minimum");
+  console.log(priceshow.value * centshow.value / 100 + " prix de la trappe");
+  console.log(priceshow.value + "/" + centshow.value); //envoie de données//
+
+  priceini.textContent = priceshow.value;
+  showcount.textContent = tourshow.value;
+  showtime.textContent = timeshow.value;
+} ///fermeture de l'application///
+
+
+function closeWindow() {
+  allparam.style.display = "none";
+  card.style.display = "none";
+} /// incrémentation du chiffre / nombre de tour///
+
+
+var count = 0;
+var list = document.querySelector('tr');
+list.addEventListener('click', function (ev) {
+  if (ev.target.tagName === 'TD') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+function action() {
+  /////////////ajout list////////////////
+  var tableau = document.getElementById("theTABLE");
+  var tr = document.createElement("TR");
+  var actionshow = document.getElementById("validationCustom07").value;
+  var pricetest = document.getElementById("validationCustom01").value;
+
+  if (actionshow === '') {
+    alert("Veuillez entrer une proposition !");
+    affiche.style.display = "none";
+  } else {
+    count++;
+    tableau.appendChild(tr);
+  } ////////////trappes %////////////
+
+
+  if (Number(actionshow) <= priceshow.value * centshow.value / 100) {
+    alert("Cette proposition n'est pas sérieuse il ne vous reste plus que " + "[ " + trapshow.value + " ] chance avant que la négociation soit annulée");
+    trapshow.value--;
+    count--;
+    console.log(+" nombre de trappes");
+
+    if (trapshow.value < 0) {
+      window.location.reload();
+    }
+  } else {
+    ////value want > last value////
+    var discount = Math.round((priceini.textContent - nbr) * 100 / priceini.textContent);
+    var last = tablefind[tablefind.length - 1];
+    tablefind.push(Number(actionshow));
+    console.log(last + " dernier prix acheteur proposé");
+
+    if (Number(actionshow) < last) {
+      tablefind.pop(Number(actionshow));
+    }
+
+    if (count > 0) {
+      if (Number(actionshow) <= last) {
+        alert("Veuillez faire une proposition supérieure à l'ancienne !");
+        count--;
+      } else {
+        document.getElementById("validationCustom07").value = "";
+        document.getElementById("validationCustom01").value = ""; ////////////////////////TD/////////////////////////
+
+        var tdone = document.createElement("TD");
+        var txt = document.createTextNode(count);
+        var tdtwo = document.createElement("TD");
+        var vend = document.createTextNode(pricetest);
+        var tdthree = document.createElement("TD");
+        var t = document.createTextNode(Number(actionshow));
+        var tdfour = document.createElement("TD");
+        var want = document.createTextNode(nbr); //// api de Philippe à rajouter
+
+        var tdfive = document.createElement("TD");
+        var sold = document.createTextNode(discount + " %"); //////////////////////DIV in TD////////////////
+
+        var divone = document.createElement("DIV");
+        var divtwo = document.createElement("DIV");
+        var divthree = document.createElement("DIV");
+        var divfour = document.createElement("DIV");
+        var divfive = document.createElement("DIV"); //////////////////TD class///////////////////
+
+        tr.className = "trTABLE";
+        tdtwo.className = "blockall selfed"; // vendeur
+
+        tdtwo.id = "y";
+        tdthree.className = "blockall buyed"; //acheteur
+
+        tdone.className = "blockall countered"; //count
+
+        tdfour.className = "blockall wanted"; //prix proposé
+
+        tdfour.id = "priceprop";
+        tdfive.className = "blockall solded"; //rabais %
+        ///////////// DIV class////////////////////////
+
+        divone.className = "cell countone";
+        divtwo.className = "cell selfone";
+        divtwo.id = "xval";
+        divthree.className = "cell buythree";
+        divfour.className = "cell wantfour";
+        divfour.id = "xprop";
+        divfive.className = "cell soldone"; ////////////TD appendChild////////////////
+
+        tr.appendChild(tdtwo); //vendeur
+        //tr.appendChild(t); // value
+
+        tr.appendChild(tdthree); //count
+
+        tr.appendChild(tdone); //ini
+
+        tr.appendChild(tdfour); //prix proposé
+
+        tr.appendChild(tdfive); //rabais %
+        //////DIV appendChild//////////////
+
+        divone.appendChild(txt); //ini
+
+        tdone.appendChild(divone);
+        divtwo.appendChild(vend); //vendeur
+
+        tdtwo.appendChild(divtwo);
+        divthree.appendChild(t); //count
+
+        tdthree.appendChild(divthree);
+        divfour.appendChild(want); //prixproposé
+
+        tdfour.appendChild(divfour);
+        divfive.appendChild(sold); //rabais %
+
+        tdfive.appendChild(divfive); //////button invisible/////
+
+        visibbutton.style.display = "none";
+        yesorno.style.display = "flex"; ///////decrementation compteur//////
+
+        showcount.textContent--;
+
+        if (showcount.textContent < 0) {
+          boxInfo.style.display = "none";
+          stop.style.display = "flex";
+          tableHidden.style.display = "none";
+          yesorno.style.display = "none";
+          thenego.style.display = "none";
+          _affiche.style.display = "none";
+        } else if (showcount.textContent == 1) {
+          stop.style.display = "none";
+        }
+
+        console.log(count + " compteur"); //  ////////////loader/////////////
+
+        var aleatoire = Math.floor(Math.random() * 4000) + 5000;
+        ;
+        var delay = 4;
+        var i = 0;
+        var cvs = document.getElementById('progress');
+
+        var _affiche = document.getElementById("afficheLoader");
+
+        var afficheCache = document.getElementById("yesorno");
+
+        if (cvs.getContext) {
+          var ctx = cvs.getContext('2d');
+          var x = cvs.width * 0.5;
+          var y = cvs.height * 0.5;
+          var r = 120;
+          var interval = setInterval(function () {
+            i += delay;
+            var multiplicator = i / aleatoire * 2;
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, multiplicator * Math.PI, false);
+            ctx.strokeStyle = "#FFBF00";
+            ctx.lineWidth = 27;
+            ctx.stroke();
+
+            if (i >= aleatoire + delay) {
+              clearInterval(interval);
+            }
+          }, delay);
+          afficheCache.style.display = "none";
+          tableau.style.display = "none";
+          _affiche.style.display = "initial";
+          loader.style.display = "initial";
+          setTimeout(function () {
+            _affiche.style.display = "";
+            loader.style.display = "none";
+          }, aleatoire + aleatoire / 5);
+          setTimeout(function () {
+            ctx.clearRect(0, 0, cvs.width, cvs.height);
+          }, aleatoire + aleatoire / 4.5);
+          setTimeout(function () {
+            afficheCache.style.display = "flex";
+          }, aleatoire);
+          setTimeout(function () {
+            tableau.style.display = "";
+          }, aleatoire);
+        }
+      }
+    }
+  }
+} ////////conditions//////////////
+
+
+function acceptNego() {
+  alert("Êtes-vous sur de vouloir accepter l'offre de _ _ _ euros"); // + "[" + negoprice + "]" + à mettre entre le mot offre et euro Philippe
+}
+
+function refusNego() {
+  visibbutton.style.display = "flex";
+  yesorno.style.display = "none";
+} ///les boutons///
+
+
+function acceptfinal() {
+  alert("Êtes-vous sur de vouloir accepter l'offre de euros"); // + "[" + negoprice + "]" + à mettre entre le mot offre et euro Philippe
+}
+
+valid.addEventListener("click", forcard);
+back.addEventListener("click", ret);
+open.addEventListener("click", openParam);
+confirm.addEventListener("click", closeParam);
+ixi.addEventListener("click", closeWindow);
+accept.addEventListener("click", acceptNego);
+refus.addEventListener("click", refusNego);
+validaction.addEventListener("click", action);
+acceptNEGO.addEventListener("click", acceptfinal);
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -19279,6 +19630,144 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ "./resources/js/timer.js":
+/*!*******************************!*\
+  !*** ./resources/js/timer.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var confirm = document.getElementById("conf");
+var bcfull = document.getElementById("bcfull");
+var stop = document.getElementById("stop");
+var thenego = document.getElementById("thenego");
+
+var _final = document.getElementById("final");
+
+var container = document.getElementById("container");
+var pomodoro = {
+  started: false,
+  minutes: 0,
+  seconds: 0,
+  count: 0,
+  fillerHeight: 0,
+  fillerIncrement: 0,
+  interval: null,
+  countDom: null,
+  minutesDom: null,
+  secondsDom: null,
+  fillerDom: null,
+  init: function init() {
+    var self = this;
+    this.minutesDom = document.querySelector('#minutes');
+    this.timerDom = document.getElementById('timer');
+    this.countDom = document.querySelector('#count');
+    this.secondsDom = document.querySelector('#seconds');
+    this.interval = setInterval(function () {
+      self.intervalCallback.apply(self);
+    }, 1000);
+
+    function startCon() {
+      self.startWork.apply(self);
+    }
+
+    ;
+    confirm.addEventListener("click", startCon);
+
+    document.querySelector('#count').onclick = function () {
+      self.startCount.apply(self);
+    };
+  },
+  resetVariables: function resetVariables(mins, secs, started, compteur) {
+    this.minutes = mins;
+    this.seconds = secs;
+    this.started = started;
+    this.count = compteur;
+  },
+  startWork: function startWork() {
+    this.resetVariables(this.minutesDom.innerHTML, this.seconds = 0, true);
+    console.log(this.minutesDom.innerHTML + " minutes");
+  },
+  //changement front(minuteur) selon le temps//
+  dangerMinuteur: function dangerMinuteur() {
+    this.timerDom.style.color = "white";
+    container.style.background = "#ab0000";
+    bcfull.style.display = "flex";
+  },
+  greenMinuteur: function greenMinuteur() {
+    this.timerDom.style.color = "white";
+    container.style.background = "#34b800";
+  },
+  blueMinuteur: function blueMinuteur() {
+    this.timerDom.style.color = "white";
+    container.style.background = "#010970";
+  },
+  stopMinuteur: function stopMinuteur() {
+    stop.style.display = "flex";
+    thenego.style.display = "none";
+  },
+  //////////////Conditions timer////////////////
+  stopTimer: function stopTimer() {
+    this.countDom.textContent--;
+
+    if (this.countDom.textContent < 0) {
+      this.countDom.textContent = 0;
+    }
+  },
+  toDoubleDigit: function toDoubleDigit(num) {
+    if (num < 10) {
+      return "0" + parseInt(num, 10);
+    }
+
+    return num;
+  },
+  updateDom: function updateDom() {
+    this.minutesDom.innerHTML = this.toDoubleDigit(this.minutes);
+    this.secondsDom.innerHTML = this.toDoubleDigit(this.seconds);
+  },
+  intervalCallback: function intervalCallback() {
+    if (!this.started) return false;
+
+    if (this.seconds == 0) {
+      if (this.minutes == 0) {
+        this.timerComplete();
+        return;
+      }
+
+      this.seconds = 59;
+      this.minutes--;
+    } else {
+      this.seconds--;
+    }
+
+    if (this.minutes >= 3) {
+      this.greenMinuteur();
+    } else if (this.minutes >= 1) {
+      this.blueMinuteur();
+    } else if (this.minutes < 1) {
+      this.dangerMinuteur();
+    }
+
+    if (this.minutes == 0) {
+      if (this.seconds == 0) {
+        this.stopMinuteur();
+      }
+    }
+
+    this.updateDom();
+  },
+  timerComplete: function timerComplete() {
+    this.started = false;
+    this.fillerHeight = 0;
+  }
+};
+
+window.onload = function () {
+  pomodoro.init();
+};
 
 /***/ }),
 
