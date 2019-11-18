@@ -19239,7 +19239,9 @@ __webpack_require__(/*! ./header */ "./resources/js/header.js");
 
 __webpack_require__(/*! ./application.js */ "./resources/js/application.js");
 
-__webpack_require__(/*! ./timer.js */ "./resources/js/timer.js"); // require('../../public/js/registration.js/index.js');
+__webpack_require__(/*! ./timer.js */ "./resources/js/timer.js");
+
+__webpack_require__(/*! ./registration.js */ "./resources/js/registration.js");
 
 /***/ }),
 
@@ -19497,19 +19499,6 @@ function action() {
         visibbutton.style.display = "none";
         yesorno.style.display = "flex"; ///////decrementation compteur//////
 
-        showcount.textContent--;
-
-        if (showcount.textContent < 0) {
-          boxInfo.style.display = "none";
-          stop.style.display = "flex";
-          tableHidden.style.display = "none";
-          yesorno.style.display = "none";
-          thenego.style.display = "none";
-          _affiche.style.display = "none";
-        } else if (showcount.textContent == 1) {
-          stop.style.display = "none";
-        }
-
         console.log(count + " compteur"); //  ////////////loader/////////////
 
         var aleatoire = Math.floor(Math.random() * 4000) + 5000;
@@ -19547,6 +19536,17 @@ function action() {
           setTimeout(function () {
             _affiche.style.display = "";
             loader.style.display = "none";
+            showcount.textContent--;
+
+            if (showcount.textContent < 0) {
+              stop.style.display = "flex";
+              tableHidden.style.display = "none";
+              yesorno.style.display = "none";
+              thenego.style.display = "none";
+              _affiche.style.display = "none";
+            } else if (showcount.textContent == 1) {
+              stop.style.display = "none";
+            }
           }, aleatoire + aleatoire / 5);
           setTimeout(function () {
             ctx.clearRect(0, 0, cvs.width, cvs.height);
@@ -19633,6 +19633,36 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/registration.js":
+/*!**************************************!*\
+  !*** ./resources/js/registration.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var siret = document.getElementById("SIRET");
+var galery = document.getElementById("gallerist-choose");
+var artist = document.getElementById("artist-choose");
+var buyer = document.getElementById("buyer-choose");
+
+function siretinput() {
+  siret.style.display = "initial";
+}
+
+function artistinput() {
+  siret.style.display = "none";
+}
+
+function buyerinput() {
+  siret.style.display = "none";
+}
+
+galery.addEventListener("click", siretinput);
+artist.addEventListener("click", artistinput);
+buyer.addEventListener("click", buyerinput);
+
+/***/ }),
+
 /***/ "./resources/js/timer.js":
 /*!*******************************!*\
   !*** ./resources/js/timer.js ***!
@@ -19648,6 +19678,9 @@ var thenego = document.getElementById("thenego");
 var _final = document.getElementById("final");
 
 var container = document.getElementById("container");
+var tableHidden = document.getElementById('table-hidden');
+var yesorno = document.getElementById("yesorno");
+var affiche = document.getElementById("afficheLoader");
 var pomodoro = {
   started: false,
   minutes: 0,
@@ -19708,6 +19741,9 @@ var pomodoro = {
   stopMinuteur: function stopMinuteur() {
     stop.style.display = "flex";
     thenego.style.display = "none";
+    tableHidden.style.display = "none";
+    yesorno.style.display = "none";
+    affiche.style.display = "none";
   },
   //////////////Conditions timer////////////////
   stopTimer: function stopTimer() {

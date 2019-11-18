@@ -14,7 +14,7 @@
             </div>
     </div>
 
-<a href="{{ asset('/artwork')}}">
+<a href="{{ asset('/artwork')}}" class="">
     <div class="containerart">
         <img src="img/scu.jpg" alt="Bootstrap" class="img-circle img-responsive allimg">
             <div class="middle">

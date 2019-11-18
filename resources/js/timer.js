@@ -4,6 +4,9 @@ let stop = document.getElementById("stop");
 let thenego = document.getElementById("thenego");
 let final = document.getElementById("final");
 let container = document.getElementById("container");
+let tableHidden = document.getElementById('table-hidden');
+let yesorno = document.getElementById("yesorno");
+let affiche = document.getElementById("afficheLoader");
 
 var pomodoro = {
     started : false,
@@ -69,6 +72,9 @@ var pomodoro = {
     stopMinuteur: function () {
         stop.style.display= "flex";
         thenego.style.display = "none";
+        tableHidden.style.display = "none";
+        yesorno.style.display="none"
+        affiche.style.display = "none";
     },
     //////////////Conditions timer////////////////
 

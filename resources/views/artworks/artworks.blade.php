@@ -93,7 +93,7 @@
                      <br>
                      <li>Prix : 200 000€ </li>
                  </ul>
-                 <a href="{{ asset('/appli')}}" class="btn btn-inscription" style="margin-top:25px;">Négocier cette oeuvre !</a>
+                 <a href="{{ asset('/appli')}}" class="btn btn-inscription btnspecial" style="margin-top:25px;">Négocier cette oeuvre !</a>
                 </div>
               </li>
 

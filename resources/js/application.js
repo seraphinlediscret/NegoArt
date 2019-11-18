@@ -249,20 +249,7 @@ function action() {
 
     ///////decrementation compteur//////
 
-    showcount.textContent--;
-    if(showcount.textContent < 0){
-      
-        boxInfo.style.display = "none";
-        stop.style.display = "flex";
-        tableHidden.style.display = "none";
-        yesorno.style.display="none"
-        thenego.style.display = "none";
-        affiche.style.display = "none";
-
-      } else if (showcount.textContent == 1) {
-
-    stop.style.display= "none";
-     }
+   
 
      console.log(count +" compteur");
 
@@ -299,6 +286,19 @@ function action() {
          setTimeout(function(){
              affiche.style.display="";
              loader.style.display = "none";
+             showcount.textContent--;
+             if(showcount.textContent < 0){
+               
+                 stop.style.display = "flex";
+                 tableHidden.style.display = "none";
+                 yesorno.style.display="none"
+                 thenego.style.display = "none";
+                 affiche.style.display = "none";
+         
+               } else if (showcount.textContent == 1) {
+         
+             stop.style.display= "none";
+              }
          }, aleatoire+(aleatoire/5));
          setTimeout(function(){
              ctx.clearRect(0,0,cvs.width, cvs.height);

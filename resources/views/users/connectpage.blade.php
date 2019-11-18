@@ -15,7 +15,7 @@
                             <label for="exampleInputPassword1">Mot de passe</label>
                             <input type="password" style="margin-bottom:10px;" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre mot de passe" required>
                             </div>
-                            <button type="submit" class="btn">Valider</button>
+                            <button type="submit" class="btn btnspecial">Valider</button>
             </form>
 
             <img src="img/negobody.jpg" alt="" style="margin-top:20px;width:95%;">
@@ -36,7 +36,7 @@
                 <hr>
                 Grâce à notre application, négociez sereinement et en toute securité !
               </p>
-              <a href="{{ asset('/registr')}}" class="btn d-block m-auto btn-inscription">Je m'inscris !</a>
+              <a href="{{ asset('/registr')}}" class="btn d-block m-auto btn-inscription btnspecial">Je m'inscris !</a>
             </div>
           </div>
         </div>

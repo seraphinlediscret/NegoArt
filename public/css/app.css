@@ -236,7 +236,7 @@ footer {
   width: 45%;
 }
 
-.btn {
+.btnspecial {
   background: goldenrod;
 }
 
@@ -349,7 +349,7 @@ li {
   transition: 0.5s ease;
 }
 
-.allimg:hover {
+.containerart:hover .allimg {
   box-shadow: 17px 18px 6px black;
   opacity: 0.8;
 }

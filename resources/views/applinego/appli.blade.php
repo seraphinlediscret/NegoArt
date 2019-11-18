@@ -218,5 +218,5 @@
     }, false);
   })();
   </script>
-
+  
 @endsection

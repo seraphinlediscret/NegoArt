@@ -20,7 +20,7 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
     </head>
     <body>
         <div class="flex-center position-ref full-height nav-verytop">
-                <a class="navbar-brand d-flex" href="/" style="justify-content:center;margin-top: 7px;"><img src="img/logo/" alt=""></a>
+                <a class="navbar-brand d-flex" href="/" style="justify-content:center;margin-top: 7px;"><img src="" alt=""></a>
             {{-- @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -37,7 +37,7 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
 
                 {{-- navbar top --}}
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-one">
-                <a href="{{ asset('/connexion')}}" class="img-connexion"><img src="img/icon/user.png" alt=""></a>
+                <a href="{{ asset('/connexion')}}" class="img-connexion "><img src="img/icon/user.png" alt=""></a>
                 <div class="">
                         <ul class="navbar-nav">
                       <li class="nav-item active connect-block">
@@ -70,7 +70,7 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Recherche" aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                              <button class="input-group-text btn btn-outline-success my-2 my-sm-0" id="basic-addon2" type="submit"><i class="fas fa-search"></i></button>
+                              <button class="input-group-text btn btn-outline-success my-2 my-sm-0 btnspecial" id="basic-addon2" type="submit"><i class="fas fa-search"></i></button>
                             </div>
                           </div> 
                       </form>
@@ -151,9 +151,8 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
               </div>
           </div>
         </footer>
+        <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
     </body>
-    
-    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     <!---Bootstrap--->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
