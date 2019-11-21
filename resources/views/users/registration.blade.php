@@ -1,5 +1,5 @@
-@extends('welcome')
-@section('content')
+@extends('layout')
+@section('registration')
 <h2>Inscription</h2>
 
 <div class="myform">
@@ -9,9 +9,9 @@
     <div class="form-group">
         <label for="exampleFormControlSelect1">Je suis</label>
         <select class="form-control" id="exampleFormControlSelect1">
-            <option id="buyer-choose">Amateur | Acheteur d'art</option>
-        <option id="gallerist-choose">Galleriste</option>
+        <option id="gallerist-choose">Galeriste</option>
         <option id="artist-choose">Artiste indépendant</option>
+        <option id="artist-choose">Amateur | Acheteur d'art</option>
         </select>
     </div>
 
@@ -43,7 +43,11 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
       <label class="form-check-label" for="exampleCheck1">J'accepte les conditions d'utilisation</label>
       </div>
-      <button type="submit" class="btn btnspecial">Valider</button>
+      <button type="submit" id="valid-registration" class="btn btnspecial">Valider</button>
   </form>
 </div>
 @endsection
+@section('script-registration')
+<script type="text/javascript" src="{{ asset('js/registration.js') }}" defer></script>
+@endsection
+    

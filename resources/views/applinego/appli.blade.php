@@ -1,20 +1,44 @@
-@extends('welcome')
-@section('content')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <title>NegoArt</title>
 
+       <!-- Fonts -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+       <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Cormorant+Infant&display=swap" rel="stylesheet"> 
+       <link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet"> 
+
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+
+    </head>
+    <body style=" background-image: url(img/testoeuvre.jpg);
+    background-size: cover;">
+       
   <!--//////////////WELCOME/////////////////////-->
-    <div id="well">
+     {{-- <div id="well">
         <h1 class="titbvn">Bienvenue dans les paramètres </h1>
         <p id="bvn">Ici, Vous allez configurer vos paramètres pour entrer en négociation</p>
     </div>
 
     <div id="paratime">
         <button type="button" class="btn-lg btn btn-block col-8 m-auto text-white font-weight-bold" id="open">Configurer vos paramètres</button>
-    </div>
+    </div> --}}
 
-<!--//////////////////NEGODEVIS/////////////////////-->
+<!--////////NOM DE L'OEUVRE////////////-->
+
+<h3 id="title-h3">Négociation du prix de l'oeuvre <span id="titleartwork">Peinture Euphorique</span></h3>
+
+
+
+<!--//////////////////NEGOART/////////////////////-->
     <div id="theapplinego"><!--div start-->
-
 
 <!--Popup qui apparait quand le timer est fini-->
     <div id="stop" class="bg-white text-danger row rounded">
@@ -22,7 +46,7 @@
        <h2 class="m-auto">Veuillez "accepter" ou "refuser" la dernière proposition.</h2>
         <div id="btnend" class="d-flex justify-content-around col col-12 mb-5 mt-5">
           <a href="{{ asset('/pay')}}" class="btn btn-success accept col-5 p-3 font-weight-bold" id="acceptNEGO">Acceptez l'offre</a>
-          <a href="{{ asset('/art')}}" class="btn btn-danger refus col-5 p-3 font-weight-bold" id="theEND">Refuser l'offre</a>
+          <a href="" class="btn btn-danger refus col-5 p-3 font-weight-bold" id="theEND">Refuser l'offre</a>
        </div>
     </div>
 <!--Fin de la popup-->
@@ -30,7 +54,7 @@
 <!--////////////////PRICE START///////////////////--->
 <!--Block Information lors de la négociation-->
 <div class="d-flex justify-content-around">
-    <div id="allheaderelements" class="bg-secondary text-center col-5 ml-5 mt-4 rounded border border-secondary">
+    <div id="allheaderelements" class="text-center col-5 ml-5 mt-4 rounded border border-secondary">
 
     <br class="my-1">
 
@@ -39,16 +63,16 @@
     <br class="my-1">
 
     <div id="divini" class="text-white font-weight-bold p-3 bg-warning rounded">
-       <span id="divini-text">Prix initial du vendeur :</span>
-       <span id="priceini" class="text-white"></span>
+       <span id="divini-text">Mise à prix:</span>
+       <span id="priceini" class="text-white">3000</span>
        <span id="price-currency">€</span>
     </div>
 
 <!---////////TIMER/////////-->
 
-<div id="pomodoro-app" class="d-flex justify-content-center">
+<div id="pomodoro-app" class="justify-content-center" style="display:none;">
     <div id="container" class="size_time rounded-circle col-3 mt-5 mb-2 font-weight-bold text-center pt-5 pb-5 pr-1 pl-1 border border-white">
-      <div id="timer">
+      <div id="timer" class="timerapp">
           <div id="time">
               <span id="minutes"></span>
               <span id="colon">:</span>
@@ -59,12 +83,13 @@
 </div>
 
    <div id="exitandtour" class="mt-4">
-    <div id="titre_nbTour" class="font-weight-bold text-white">
-        <span id="tourcontent">Nombre de tours :
-        <span id="count"></span>
+    <div id="titre_nbTour" class="font-weight-bold text-white" style="display:none;">
+        <span id="tourcontent">Il vous reste :
+        <span id="count"></span> tours
         </span>
     </div>
-        <a href="{{ asset('/art')}}" class="btn btn-danger mb-3 mt-5 mb-2" id="exyt">Quitter la negociation</a>
+        <a href="" class="btn btn-danger mb-3 mt-5 mb-2" id="exyt">Quitter la negociation</a>
+        <a href="#" class="width_button btn btn-success font-weight-bold" style="margin-top:30px; margin-left:25px;" id="conf">Lancer la négociation</a>
     </div>
    </div>
 <!--Fin du block information-->
@@ -101,13 +126,10 @@
 <!--Tableau d'information sur la négociation-->
   <thead>
     <tr class="text-white">
-      <th scope="col" class="titletable self"><div class="cell seller-price-cell">
-        Prix Vendeur
-      </div></th>
-      <th scope="col" class="titletable buy"><div class="cell buyer-price-cell">Prix Acheteur</div></th>
       <th scope="col" class="titletable  text-center"><div class="cell counter-cell">0</div></th>
+      <th scope="col" class="titletable buy"><div class="cell buyer-price-cell">Prix acheteur</div></th>
       <th scope="col" class="titletable want"><div class="cell wanted-price-cell">Prix proposé</div></th>
-      <th scope="col" class="titletable sold"><div class="cell sold-cell">Rabais %</div></th>
+      <th scope="col" class="titletable sold"><div class="cell sold-cell">Remise obtenue</div></th>
     </tr>
   </thead>
   <tbody id="theTABLE">
@@ -138,7 +160,7 @@
             <div class="cardinput col-4">
               <label for="validationCustom01" class="titi control-label">Prix de l'oeuvre :</label>
               <div class="input-group">
-              <input type="text" class="form-control field" id="validationCustom01" placeholder="Entrez votre prix initial" value="" required>
+              <input type="number" class="form-control field" id="validationCustom01" placeholder="Entrez votre prix initial" value="3000" required>
               <div class="input-group-append">
                 <span class="input-group-text unit">€</span>
               </div>
@@ -147,13 +169,13 @@
 
       <div class="cardinput col-4">
         <label for="validationCustom02" class="titi">Nombre de trappes</label>
-        <input type="number" class="form-control field nbt" id="validationCustom02" placeholder="Entrez votre nombre d'essais" value="" required>
+        <input type="number" class="form-control field nbt" id="validationCustom02" placeholder="Entrez votre nombre d'essais" value="3" required>
       </div>
 
       <div class="cardinput col-4">
         <label for="validationCustom03" class="titi">Taux de la trappe</label>
         <div class="input-group mb-3">
-        <input type="number" class="form-control field" id="validationCustom03" placeholder="Entrez le taux de trappe" value="" required>
+        <input type="number" class="form-control field" id="validationCustom03" placeholder="Entrez le taux de trappe" value="20" required>
         <div class="input-group-append">
           <span class="input-group-text unitpour">%</span>
         </div>
@@ -164,13 +186,13 @@
 
       <div class="cardinput col-4">
         <label for="validationCustom04" class="titi">Nombre de tours</label>
-        <input type="number" class="form-control field" id="validationCustom04" placeholder="Entrez votre nombre de tours" value="" required>
+        <input type="number" class="form-control field" id="validationCustom04" placeholder="Entrez votre nombre de tours" value="5" required>
       </div>
 
       <div class="cardinput col-4" style="margin-bottom: 25px;">
         <label for="validationCustom05" class="titi">Prix minimum de vente</label>
         <div class="input-group">
-        <input type="text" class="form-control field" id="validationCustom05" placeholder="Entrez votre prix minimum" value="" required>
+        <input type="number" class="form-control field" id="validationCustom05" placeholder="Entrez votre prix minimum" value="2400" required>
         <div class="input-group-append">
           <span class="input-group-text unitmin">€</span>
         </div>
@@ -179,7 +201,7 @@
 
       <div class="cardinput col-4">
         <label for="validationCustom06" class="titi">Temps de négociation (en min)</label>
-        <input type="number" class="form-control field" id="validationCustom06" placeholder="Entrez la durée de négociation" value="" required>
+        <input type="number" class="form-control field" id="validationCustom06" placeholder="Entrez la durée de négociation" value="5" required>
       </div>
     </div>
 <!--/////////////////////CARD CONFIRM////////////////////////////////-->
@@ -188,15 +210,22 @@
     <div class="card-body">
         <h4 class="card-title font-weight-bold">Validation</h4>
         <p class="card-text font-weight-bold">Voulez-vous confirmer ces paramètres ?</p>
-        <div class="d-flex justify-content-between">
-        <a href="#" class="width_button btn btn-success font-weight-bold" id="conf">Je confirme</a>
-        <a href="#" class="width_button btn btn-warning text-white font-weight-bold" id="back">Retour</a>
-        </div>
+        
     </div>
 </div>
   <button class="btn btn-success text-white font-weight-bold rounded-pill mr-auto ml-auto mt-5 mb-5 p-2" type="submit" id="valid">Valider vos paramètres</button>
     </form>
+    <div class="d-flex justify-content-between">
+        <a href="#" class="width_button btn btn-warning text-white font-weight-bold" id="back">Retour</a>
+       
+     </div>
 </div>
+</body>
+<!---Bootstrap--->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
 <!--///////////////////////////script////////////////////////////////////////////////////-->
   <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -218,5 +247,6 @@
     }, false);
   })();
   </script>
-  
-@endsection
+{{-- @section('script-appli')@endsection --}}
+<script type="text/javascript" src="{{ asset('js/application.js') }}" defer></script>
+<script type="text/javascript" src="{{ asset('js/timer.js') }}" defer></script>

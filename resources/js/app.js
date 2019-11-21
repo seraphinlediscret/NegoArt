@@ -1,5 +1,3 @@
 require('./bootstrap');
-require('./header');
-require('./application.js');
-require('./timer.js');
-require('./registration.js');
+import AOS from 'aos';
+AOS.init();

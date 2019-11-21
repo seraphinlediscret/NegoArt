@@ -1,1 +1,0 @@
-<h2>Connexion en tant que galleriste</h2>

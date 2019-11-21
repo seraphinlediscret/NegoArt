@@ -19,12 +19,13 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
 
     </head>
     <body>
+       
         <div class="flex-center position-ref full-height nav-verytop">
                 <a class="navbar-brand d-flex" href="/" style="justify-content:center;margin-top: 7px;"><img src="" alt=""></a>
-            {{-- @if (Route::has('login'))
+             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/homing') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -33,7 +34,7 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
                         @endif
                     @endauth
                 </div>
-            @endif --}}
+            @endif 
 
                 {{-- navbar top --}}
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-one">
@@ -44,7 +45,7 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
     
                       </li> 
                       <li class="nav-item active connect-block" style="margin-top: -5px;">
-                            <a class="navbar-brand connect-nav" href="{{ asset('/connexion')}}">Connexion | Inscription</a>
+                            <a class="navbar-brand connect-nav" href="{{ asset('/connexion')}}">Connexion Vendeur</a>
                       </li> 
                   </ul>
             </nav>
@@ -66,18 +67,21 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
                 </button>
 
                      {{-- search --}}
-                     <form class="form-inline my-2 my-lg-0" style="left:-4px;">
+                     {{-- <form class="form-inline my-2 my-lg-0" style="left:-4px;">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Recherche" aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                               <button class="input-group-text btn btn-outline-success my-2 my-sm-0 btnspecial" id="basic-addon2" type="submit"><i class="fas fa-search"></i></button>
                             </div>
                           </div> 
-                      </form>
+                      </form> --}}
 
                       {{-- navbar oeuvre --}}
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                          <a class="nav-link navAll" href="{{ asset('/')}}">Accueil<span class="sr-only">(current)</span></a>
+                      </li>
                         <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle navAll" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   Oeuvres
@@ -96,16 +100,16 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
                               </li>
 
                         {{-- navbar --}}
-                      <li class="nav-item active">
+                      {{-- <li class="nav-item active">
                           <a class="nav-link navAll" href="{{ asset('/rules')}}">Comment ça marche ?<span class="sr-only">(current)</span></a>
                       </li>
 
                       <li class="nav-item active">
                           <a class="nav-link navAll" href="{{ asset('/rules')}}">Règles et conditions d'utilisation<span class="sr-only">(current)</span></a>
-                      </li>
+                      </li> --}}
 
                       {{-- navbar Plus--}}
-                      <li class="nav-item dropdown">
+                      {{-- <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle navAll" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Plus
                           </a>
@@ -117,13 +121,22 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="">Besoin d'aide ?</a>
                          </div>
-                     </li>
+                     </li> --}}
                  </ul>
             </div>
         </nav>
 
         <div class="second-body">
             @yield('content')
+            {{-- @yield('application') --}}
+            @yield('connect')
+            @yield('registration')
+            @yield('artwork-sculpture')
+            @yield('artwork-paint')
+            @yield('artwork-textile')
+            @yield('allartsworks')
+            @yield('gallery')
+            
         </div>
 
         <footer>
@@ -152,6 +165,9 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
           </div>
         </footer>
         <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+        @yield('script-registration')
+        @yield('script-appli')
+        @yield('script-connect')
     </body>
     <!---Bootstrap--->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

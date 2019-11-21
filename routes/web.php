@@ -15,31 +15,47 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/artwork', function () {
-    return view('artworks/artworks');
-});
+Route::get('/sculpture', 'SculptureController@index');
 
-Route::get('/art', function () {
-    return view('artworks/allart');
-});
+Route::get('/textile', 'TextileController@index');
 
-Route::get('/galleries', function () {
-    return view('galleries/galleries');
-});
+Route::get('/paint', 'PaintController@index');
 
-Route::get('/rules', function () {
-    return view('rules/rules');
-});
 
-Route::get('/appli', function () {
-    return view('applinego/appli');
-});
+Route::get('/art', 'AllartsController@index');
+
+Route::get('/appli', 'ApplicationController@index');
+
+////////create artwork//////////
+
+Route::get('/create', 'CreateController@index');
+
 //////////////Users///////////////
-
-Route::get('/connexion', function () {
-    return view('users/connectpage');
-});
+Route::get('/backselfer', 'BackSelferController@index');
 
 Route::get('/registr', function () {
     return view('users/registration');
-});
+ });
+
+
+// Route::get('/galleries', function () {
+//     return view('galleries/galleries');
+// });
+
+// Route::get('/rules', function () {
+//     return view('rules/rules');
+// });
+
+
+
+
+// Route::get('/connexion', function () {
+//     return view('users/connectpage');
+// });
+
+
+
+// Route::get('/buyer', function () {
+//     return view('users/buyer');
+// });
+
