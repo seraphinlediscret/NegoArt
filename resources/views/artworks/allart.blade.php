@@ -25,12 +25,13 @@
         </a>
 
         <a href="{{ asset('/paint')}}" class="paint">
-            <div class="btn btn-warning text-center d-block m-auto artworknegocing">Oeuvre à négocier !</div>
+            
             <div class="containerart">
             <img src="img/testoeuvre.jpg" alt="Bootstrap" class="img-circle img-responsive allimg">
             <div class="middle">
             <div class="textart">Peinture</div>
             </div>
+            <div class="btn btn-warning text-center d-block m-auto artworknegocing">Oeuvre à négocier !</div>
             </div> 
         </a>
 
@@ -157,7 +158,10 @@
 <img src="img/scu.jpg" alt="Bootstrap" class="img-circle img-responsive allimg">
 <img src="img/testoeuvre.jpg" alt="Bootstrap" class="img-rounded img-responsive allimg">
 <img src="img/textile.jpg" alt="Bootstrap" class="img-thumbnail img-responsive allimg">  --}}
-mysql -u phpmyadmin -p
+
+
+
+{{-- mysql -u phpmyadmin -p
 use negoartdemo
 
 N° int
@@ -178,7 +182,7 @@ Prix minimum[minimum price] int
 Nombre de tour[number tours]: int
 Durée int minutes[time]
 Taux de trappe[test rate] int %
-Nombre de trappe[number test] int
+Nombre de trappe[number test] int --}}
 
 </div>
 @endsection

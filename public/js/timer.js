@@ -1,5 +1,5 @@
 
-let bcfull = document.getElementById("bcfull");
+let bcFull = document.getElementById("bcfull");
 let final = document.getElementById("final");
 let container = document.getElementById("container");
 let affiche = document.getElementById("afficheLoader");
@@ -53,7 +53,7 @@ var pomodoro = {
 
         this.timerDom.style.color = "white";
         container.style.background = "#ab0000";
-        bcfull.style.display ="flex";
+        bcFull.style.display ="flex";
     },
     greenMinuteur: function(){
 
@@ -67,9 +67,9 @@ var pomodoro = {
     },
     stopMinuteur: function () {
         stop.style.display= "flex";
-        thenego.style.display = "none";
+        theNego.style.display = "none";
         tableHidden.style.display = "none";
-        yesorno.style.display="none"
+        yesOrNo.style.display="none"
         affiche.style.display = "none";
     },
     //////////////Conditions timer////////////////

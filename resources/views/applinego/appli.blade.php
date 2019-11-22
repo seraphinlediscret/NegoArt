@@ -113,15 +113,12 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
 <!--fin de la balise du message-->
 
 <!--LOADER-->
-<div id="afficheLoader" class="background_loader">
-    <canvas id="progress" width="1350" height="550" ></canvas>
-    <div class="test">
-      <section id="loader" class="section_loader">
-        <span></span>
-         <p class="test_align font-weight-bold">ANALYSE</p>
-      </section>
-    </div>
+<section id="loader" class="background_loader hidden">
+  <div class="background">
+<span class="loader loader-circles"></span>
+<p class="textLoader">ANALYSE..</p>
 </div>
+</section>
 
 <!--Tableau d'information sur la négociation-->
   <thead>

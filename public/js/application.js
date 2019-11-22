@@ -2,55 +2,54 @@ let valid = document.getElementById("valid");
 let card = document.getElementById("confirm");
 let back = document.getElementById("back");
 let confirm = document.getElementById("conf");
-let negoweb = document.getElementById("app");
+let negoWeb = document.getElementById("app");
 let fields = document.getElementsByClassName("field");
 //let open = document.getElementById("open");
-let allparam = document.getElementById("containerparam");
+let allParam = document.getElementById("containerparam");
 let ixi = document.getElementById("ixi");
 let appli = document.getElementById("theapplinego");
 let exyt = document.getElementById("exyt");
 //let well = document.getElementById("well");
-let priceini = document.getElementById("priceini");
-let divini = document.getElementById("divini");
-let validaction = document.getElementById("validaction");
+let priceIni = document.getElementById("priceini");
+let divIni = document.getElementById("divini");
+let validAction = document.getElementById("validaction");
 let accept = document.getElementById("accept");
 let refus = document.getElementById("refus");
-let pricewant = document.getElementById("pricewant");
-let visibbutton = document.getElementById("valprop");
-let yesorno = document.getElementById("yesorno");
+let priceWant = document.getElementById("pricewant");
+let visibleButton = document.getElementById("valprop");
+let yesOrNo = document.getElementById("yesorno");
 let stop = document.getElementById("stop");
-let thenego = document.getElementById("thenego");
+let theNego = document.getElementById("thenego");
 let theEND = document.getElementById("theEND");
-let titleart = document.getElementById("title-h3");
-let tablenego = document.querySelector(".tableau");
-let pomodoroapp = document.getElementById("pomodoro-app");
-let nbtours = document.getElementById("titre_nbTour");
+let titleArt = document.getElementById("title-h3");
+let tableNego = document.querySelector(".tableau");
+let pomodoroApp = document.getElementById("pomodoro-app");
+let nbTours = document.getElementById("titre_nbTour");
 
-//send DATA//
-let priceshow =document.getElementById("validationCustom01");//prix initial
-let trapshow = document.getElementById("validationCustom02");//trappes
-let centshow = document.getElementById("validationCustom03");//trappe %
-let tourshow = document.getElementById("validationCustom04");//nombre de tour
-let priceminshow = document.getElementById("validationCustom05");//prix minimum de vente
-let timeshow = document.getElementById("validationCustom06");//le temps
-let actionshow = document.getElementById("validationCustom07");//input
+//send DATAS//
+let priceShow =document.getElementById("validationCustom01");//prix initial
+let trapShow = document.getElementById("validationCustom02");//trappes
+let centShow = document.getElementById("validationCustom03");//trappe %
+let tourShow = document.getElementById("validationCustom04");//nombre de tour
+let priceMinShow = document.getElementById("validationCustom05");//prix minimum de vente
+let timeShow = document.getElementById("validationCustom06");//le temps
+let actionShow = document.getElementById("validationCustom07");//input
 
-//reception DATA //
-let showcount = document.getElementById("count");///le count du tableau
-let showprice = document.getElementById("showprice");//prix initial
-let showbuy = document.getElementById("showbuy");//acheteur
-let showwant = document.getElementById("showwant");//prix proposé
-let showtour = document.getElementById("showtour");//nombre de tour
-let showrab = document.getElementById("showrab");// rabais
-let showtime = document.getElementById("minutes");//timer
-let xprop = document.getElementById("xprop");// value prop (25000)
+//reception DATAS //
+let showCount = document.getElementById("count");///le count du tableau
+let showPrice = document.getElementById("showprice");//prix initial
+let showBuy = document.getElementById("showbuy");//acheteur
+let showWant = document.getElementById("showwant");//prix proposé
+let showTour = document.getElementById("showtour");//nombre de tour
+let showRab = document.getElementById("showrab");// rabais
+let showTime = document.getElementById("minutes");//timer
 
 // array empty//
-let tablefind = [];
+let tableFind = [];
 
 //let nbtrap = trapshow.value;
 
-let nbr = 2500; // remplacer par l'algo de Philippe
+let nbr = 2500; // remplacer le "2500" par l'algo de Philippe
 let tableHidden = document.getElementById('table-hidden');
 let boxInfo = document.getElementById('allheaderelements');
 let acceptNEGO = document.getElementById("acceptNEGO");
@@ -81,51 +80,51 @@ function forCard(event) {
     }
 }
 
-///retour///
+///return///
 function returnParam() {
     card.style.display = "none";
     valid.style.display= "flex";
 }
-///ouvrir les paramètres///
+///open  parameters///
 function openParam() {
-    allparam.style.display = "initial";
+    allParam.style.display = "initial";
 
 }
-///confirmation des paramètres///
+///confirmation parameters///
  function closeParam() {
     // allparam.style.display = "none";
     // card.style.display = "none";
     appli.style.display = "initial";
     //open.style.display = "none";
     //well.style.display = "none";
-    divini.style.display = "initial";
-    titleart.style.display = "block";
-    tablenego.style.display = "initial";
+    divIni.style.display = "initial";
+    titleArt.style.display = "block";
+    tableNego.style.display = "initial";
     confirm.style.display = "none";
-    pomodoroapp.style.display = "flex";
-    nbtours.style.display= "block";
-    console.log(trapshow.value + " trappes");
-    console.log(centshow.value + " % du prix minimum");
-    console.log(priceminshow.value + " prix minimum");
-    console.log(priceshow.value*centshow.value/100 + " prix de la trappe");
-    console.log(priceshow.value+"/"+centshow.value);
-    console.log(priceshow.value + " prix initial");
-    //envoie de données//
+    pomodoroApp.style.display = "flex";
+    nbTours.style.display= "block";
+    console.log(trapShow.value + " trappes");
+    console.log(centShow.value + " % du prix minimum");
+    console.log(priceMinShow.value + " prix minimum");
+    console.log(priceShow.value*centShow.value/100 + " prix de la trappe");
+    console.log(priceShow.value+"/"+centShow.value);
+    console.log(priceShow.value + " prix initial");
+    //push datas parameters//
 
-    priceini.textContent = priceshow.value;
-    showcount.textContent = tourshow.value;
-    showtime.textContent = timeshow.value;
+    priceIni.textContent = priceShow.value;
+    showCount.textContent = tourShow.value;
+    showTime.textContent = timeShow.value;
 
  }
 
 
-///fermeture de l'application///
+// application close///
 function closeWindow() {
-    allparam.style.display = "none";
+    allParam.style.display = "none";
     card.style.display = "none";
 }
 
-/// incrémentation du chiffre / nombre de tour///
+/// incrémentation / tour number///
 let count = 0;
 let list = document.querySelector('tr');
 list.addEventListener('click', function(ev) {
@@ -136,12 +135,12 @@ list.addEventListener('click', function(ev) {
 
 function action() {
 
-    /////////////ajout list////////////////
+    //////////// list table////////////////
     var tableau = document.getElementById("theTABLE");
     var tr = document.createElement("TR");
-    var actionshow = document.getElementById("validationCustom07").value;
+    var actionShow = document.getElementById("validationCustom07").value;
 
-    if (actionshow === ''){
+    if (actionShow === ''){
         alert("Veuillez entrer une proposition !");
         affiche.style.display = "none";
 
@@ -151,30 +150,30 @@ function action() {
    
     ////////////trappes %////////////
     
-   if (Number(actionshow)<= priceshow.value*centshow.value/100) {
+   if (Number(actionShow)<= priceShow.value*centShow.value/100) {
 
-        alert("Cette proposition n'est pas sérieuse il ne vous reste plus que "+"[ "+ trapshow.value +" ] chance avant que la négociation soit annulée");
-        trapshow.value--;
+        alert("Cette proposition n'est pas sérieuse il ne vous reste plus que "+"[ "+ trapShow.value +" ] chance(s) avant que la négociation soit annulée");
+        trapShow.value--;
         count --;
         console.log( +" nombre de trappes");
         
-        if (trapshow.value < 0){
+        if (trapShow.value < 0){
         window.location.reload();
 
     }
     } else {
 
      ////value want > last value////
-     let discount = Math.round((priceini.textContent - nbr)*100/priceini.textContent);
-     let last = tablefind[tablefind.length -1];
-     tablefind.push(Number(actionshow));
+     let discount = Math.round((priceIni.textContent - nbr)*100/priceIni.textContent);
+     let last = tableFind[tableFind.length -1];
+     tableFind.push(Number(actionShow));
      console.log(last + " dernier prix acheteur proposé");
 
-     if (Number(actionshow) < last )
-         tablefind.pop(Number(actionshow));
+     if (Number(actionShow) < last )
+         tableFind.pop(Number(actionShow));
      
      if (count > 0) {
-        if (Number(actionshow) <= last ) {
+        if (Number(actionShow) <= last ) {
             alert("Veuillez faire une proposition supérieure à l'ancienne !");
             count --;
 
@@ -184,145 +183,119 @@ function action() {
     document.getElementById("validationCustom01").value = "";
 
     ////////////////////////TD/////////////////////////
-    var valueinput = document.createTextNode(Number(actionshow));
+    var valueInput = document.createTextNode(Number(actionShow));
     var txt = document.createTextNode(count);
-    var tdone = document.createElement("TD");
-    var tdthree = document.createElement("TD");
-    var tdfour = document.createElement("TD");
-    var want = document.createTextNode(nbr); //// remplacer nbr par la variable de Philippe à rajouter
-    var tdfive = document.createElement("TD");
+    var tdOne = document.createElement("TD");
+    var tdThree = document.createElement("TD");
+    var tdFour = document.createElement("TD");
+    var want = document.createTextNode(nbr); //// le nbr pour la variable de Philippe
+    var tdFive = document.createElement("TD");
     var sold = document.createTextNode(discount + " %");
 
     //////////////////////DIV in TD////////////////
 
-    var divone = document.createElement("DIV");
-    var divthree = document.createElement("DIV");
-    var divfour = document.createElement("DIV");
-    var divfive = document.createElement("DIV");
+    var divOne = document.createElement("DIV");
+    var divThree = document.createElement("DIV");
+    var divFour = document.createElement("DIV");
+    var divFive = document.createElement("DIV");
 
     //////////////////TD class///////////////////
  
 
     tr.className = "trTABLE";
-    tdone.className = "blockall countered";//count
-    tdthree.className = "blockall buyed";//acheteur
-    tdfour.className = "blockall wanted";//prix proposé
-    tdfour.id = "priceprop";
-    tdfive.className = "blockall solded";//rabais %
+    tdOne.className = "blockall countered";//count
+    tdThree.className = "blockall buyed";//acheteur
+    tdFour.className = "blockall wanted";//prix proposé
+    tdFour.id = "priceprop";
+    tdFive.className = "blockall solded";//rabais %
 
     ///////////// DIV class////////////////////////
    
 
-    divone.className ="cell countone";
-    divthree.className ="cell buythree";
-    divfour.className ="cell wantfour";
-    divfour.id = "xprop";
-    divfive.className ="cell soldone";
+    divOne.className ="cell countone";
+    divThree.className ="cell buythree";
+    divFour.className ="cell wantfour";
+    divFour.id = "xprop";
+    divFive.className ="cell soldone";
 
     ////////////TD appendChild////////////////
-    tr.appendChild(tdone);//count
-    tr.appendChild(tdthree);
-    tr.appendChild(tdfour);//prix proposé
-    tr.appendChild(tdfive);//rabais %
+    tr.appendChild(tdOne);//count
+    tr.appendChild(tdThree);
+    tr.appendChild(tdFour);//prix proposé
+    tr.appendChild(tdFive);//rabais %
 
     //////DIV appendChild//////////////
 
-    divone.appendChild(txt);//ini
-    tdone.appendChild(divone);
-    divthree.appendChild(valueinput);//count
-    tdthree.appendChild(divthree);
-    divfour.appendChild(want);//prixproposé
-    tdfour.appendChild(divfour);
-    divfive.appendChild(sold);//rabais %
-    tdfive.appendChild(divfive);
+    divOne.appendChild(txt);//ini
+    tdOne.appendChild(divOne);
+    divThree.appendChild(valueInput);//count
+    tdThree.appendChild(divThree);
+    divFour.appendChild(want);//prixproposé
+    tdFour.appendChild(divFour);
+    divFive.appendChild(sold);//rabais %
+    tdFive.appendChild(divFive);
 
     //////button invisible/////
 
-    visibbutton.style.display = "none";
-    yesorno.style.display = "flex";
+    visibleButton.style.display = "none";
+    yesOrNo.style.display = "flex";
 
     ///////decrementation compteur//////
 
      console.log(count +" compteur");
 
-    //  ////////////loader/////////////
-     const aleatoire = Math.floor(Math.random() * 4000) + 5000;;
-     const delay = 4;
+   //  ////////////loader/////////////
+   const aleatoire = Math.floor(Math.random() * 4000) + 5000;
 
-     let i = 0;
-     let cvs = document.getElementById('progress');
-     let affiche = document.getElementById("afficheLoader");
-     let afficheCache = document.getElementById("yesorno");
+   loader.style.visibility="visible";
+   loader.style.opacity ="1";
+   validAction.style.display="none";
+   tableau.style.display="none";
+   yesOrNo.style.display="none";
+   let timeOut = setTimeout(function(){
+       showCount.textContent--;
+       tableau.style.display = "";
+       validAction.style.display="";
+       loader.style.visibility = "";
+       loader.style.opacity ="";
+       yesOrNo.style.display="flex";
 
-     if(cvs.getContext){
-        let ctx = cvs.getContext('2d');
-        const x = cvs.width*0.5;
-         const y = cvs.height*0.5;
-         const r = 120;
-         let interval = setInterval(function() {
-             i += delay;
-             let multiplicator = (i / aleatoire) * 2;
-             ctx.beginPath();
-             ctx.arc(x, y, r, 0, multiplicator*Math.PI, false)
-             ctx.strokeStyle = "#FFBF00";
-             ctx.lineWidth = 27;
-             ctx.stroke();
-             if(i >= aleatoire+(delay)){clearInterval(interval);}
-         }, delay)
+        if(showCount.textContent == 0){
+      stop.style.display="none";
+      alert("attention c'est votre dernier tour !")
 
-
-         afficheCache.style.display="none";
-         tableau.style.display="none";
-         affiche.style.display="initial";
-         loader.style.display="initial";
-         setTimeout(function(){
-             affiche.style.display="";
-             loader.style.display = "none";
-             showcount.textContent--;
-             if(showcount.textContent < 0){
-               
-                 stop.style.display = "flex";
-                 tableHidden.style.display = "none";
-                 yesorno.style.display="none"
-                 thenego.style.display = "none";
-                 affiche.style.display = "none";
-         
-               } else if (showcount.textContent == 1) {
-         
-             stop.style.display= "none";
-              }
-         }, aleatoire+(aleatoire/5));
-         setTimeout(function(){
-             ctx.clearRect(0,0,cvs.width, cvs.height);
-         }, aleatoire+(aleatoire/4.5));
-         setTimeout(function(){
-             afficheCache.style.display = "flex";
-             }, aleatoire);
-         setTimeout(function(){
-             tableau.style.display = "";
-             }, aleatoire);
-        }
-      }
-    }
-    }
+  } else if(showCount.textContent < 0) {
+     clearTimeout(timeOut);
+     stop.style.display ="flex";
+     validAction.style.display="none";
+     yesOrNo.style.display="none";
+     boxInfo.style.display="none";
+     tableNego.style.display="none";
+     loader.style.visibility = "";
+     loader.style.opacity ="";
+     }
+   }, aleatoire);
   }
+ }
+}
+}
 }
 ////////conditions//////////////
 
 function acceptNego() {
 alert("Êtes-vous sur de vouloir accepter l'offre de _ _ _ euros");
-// + "[" + negoprice + "]" + à mettre entre le mot offre et euro Philippe
+// + "[" + negoprice + "]" + à mettre à la place des _ _ _ Philippe
 }
 
 
 function refusalNego() {
-    visibbutton.style.display ="flex";
-    yesorno.style.display = "none";
+    visibleButton.style.display ="flex";
+    yesOrNo.style.display = "none";
 }
 ///les boutons///
 function acceptFinal() {
     alert("Êtes-vous sur de vouloir accepter l'offre de _ _ _ euros");
-    // + "[" + negoprice + "]" + à mettre entre le mot offre et euro Philippe
+    // + "[" + negoprice + "]" + à mettre à la place des _ _ _ Philippe
 }
 
 function refusalFinal() {
@@ -336,7 +309,7 @@ confirm.addEventListener("click", closeParam);
 ixi.addEventListener("click", closeWindow);
 accept.addEventListener("click", acceptNego);
 refus.addEventListener("click", refusalNego);
-validaction.addEventListener("click", action);
+validAction.addEventListener("click", action);
 acceptNEGO.addEventListener("click", acceptFinal);
 theEND.addEventListener("click", refusalFinal);
 exyt.addEventListener("click", refusalFinal);

@@ -15,8 +15,10 @@
 {{-- Header --}}
 <header>
   <div class="header-contener d-flex justify-content-between ">
-    <a href="/"><img class="header-img img-fluid" src="../img/logos/svg/negopricing-logo-pure.svg"
-        alt="logo-negopricing"></a>
+    
+    <a href="/" style="display: flex;width: 25%;margin: auto;"><span class="title-logo">Neg</span><img class="header-img img-fluid" src="../img/logos/svg/negopricing-logo-pure.svg"
+        alt="logo-negopricing"><span class="title-logo">Art</span></a>
+       
     <div class="btn-group p-4">
     <a href="/" class=" btn-login btn btn-outline-secondary">
         Se connecter

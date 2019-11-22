@@ -32,7 +32,7 @@
 </ul>
 <script type="text/javascript">
     function ouvre_popup(page) {
-     window.open(page,"nom_popup","menubar=no, status=no, scrollbars=no, menubar=no, width=1200, height=1000");
+     window.open(page,"nom_popup","menubar=no, status=no;");
     }
 </script>
 
