@@ -43,7 +43,7 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
 <!--Popup qui apparait quand le timer est fini-->
     <div id="stop" class="bg-white text-danger row rounded">
         <h1 class="text-decoration-none  mr-auto ml-auto font-weight-bold mt-5">!! LA NÉGOCIATION EST TERMINÉ !!</h1>
-       <h2 class="m-auto">Veuillez "accepter" ou "refuser" la dernière proposition.</h2>
+       <h2 class="m-auto">Veuillez "accepter" ou "refuser" la dernière proposition de [api Philippe]</h2>
         <div id="btnend" class="d-flex justify-content-around col col-12 mb-5 mt-5">
           <a href="{{ asset('/pay')}}" class="btn btn-success accept col-5 p-3 font-weight-bold" id="acceptNEGO">Acceptez l'offre</a>
           <a href="" class="btn btn-danger refus col-5 p-3 font-weight-bold" id="theEND">Refuser l'offre</a>

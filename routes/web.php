@@ -55,7 +55,7 @@ Route::get('/registr', function () {
 
 
 
-// Route::get('/buyer', function () {
-//     return view('users/buyer');
-// });
+Route::get('/buyer', function () {
+    return view('users/buyer');
+ });
 
