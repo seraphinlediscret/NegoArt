@@ -49,7 +49,8 @@ let tableFind = [];
 
 //let nbtrap = trapshow.value;
 
-let nbr = 2500; // remplacer le "2500" par l'algo de Philippe
+let nbr ;
+let discount;
 let tableHidden = document.getElementById('table-hidden');
 let boxInfo = document.getElementById('allheaderelements');
 let acceptNEGO = document.getElementById("acceptNEGO");
@@ -134,7 +135,7 @@ list.addEventListener('click', function(ev) {
  }, false);
 
 function action() {
-
+    
     //////////// list table////////////////
     var tableau = document.getElementById("theTABLE");
     var tr = document.createElement("TR");
@@ -156,7 +157,8 @@ function action() {
         trapShow.value--;
         count --;
         console.log( +" nombre de trappes");
-        
+       
+
         if (trapShow.value < 0){
         window.location.reload();
 
@@ -164,11 +166,11 @@ function action() {
     } else {
 
      ////value want > last value////
-     let discount = Math.round((priceIni.textContent - nbr)*100/priceIni.textContent);
      let last = tableFind[tableFind.length -1];
      tableFind.push(Number(actionShow));
      console.log(last + " dernier prix acheteur proposé");
-
+     console.log(actionShow + " valeur entrée");
+    
      if (Number(actionShow) < last )
          tableFind.pop(Number(actionShow));
      
@@ -178,7 +180,11 @@ function action() {
             count --;
 
          } else {
-             
+  
+    nbr = (Number(actionShow) + Number(priceIni.textContent))/2; // remplacer par l'algo de Philippe ( ici test moyenne)
+    discount = Math.round((Number(priceIni.textContent) - Number(nbr))*100/Number(priceIni.textContent));
+    console.log(discount + " % de remise");
+    console.log(nbr + " moyenne");
     document.getElementById("validationCustom07").value = "";
     document.getElementById("validationCustom01").value = "";
 
