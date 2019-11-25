@@ -315,6 +315,11 @@ footer {
 
 .art-group {
   margin-bottom: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin: auto;
+  display: block;
 }
 
 .btn-nego {
@@ -384,6 +389,19 @@ li {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+}
+
+.list-li {
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.btnart {
+  margin: auto;
+  display: block;
+  width: 20%;
+  text-align: center;
 }
 
 .propok {

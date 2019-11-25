@@ -4,10 +4,9 @@
 
 <ul class="">
         <li class="media art-group">
-                <img src="img/testoeuvre.jpg" class="img-fluid" alt="Responsive image">
+                <img src="img/testoeuvre.jpg" class="img-fluid d-block m-auto" alt="Responsive image">
                 <div class="media-body media-test">
-                  <h5 class="mt-0 mb-5">Peinture Euphorique</h5>
-                 <ul>
+                 <ul class="list-li" >
                      <li>Hauteur: 1 mètre </li>
                     <br>
                      <li>Largeur: 50cm mètres</li>
@@ -20,13 +19,13 @@
                      <br>
                      <li>Thèmes : lorem</li>
                      <br>
-                     <li>Descriptif : Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam impedit vero provident officia illum assumenda dicta veniam minima eos quasi ratione nihil, obcaecati corporis facilis. Accusantium doloribus maiores autem nam.</li>
+                     <li>Descriptif : Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, itaque! </li>
                      <br>
                      <li>Auteur : Untel </li>
                      <br>
                      <li>Prix : 3000€ </li>
                  </ul>
-                 <a href="javascript:ouvre_popup('{{ asset('/appli')}}')" class="btn btn-inscription btnspecial" style="margin-top:25px;">Négocier cette oeuvre !</a>
+                 <a href="javascript:ouvre_popup('{{ asset('/appli')}}')" class="btn btnspecial btnart " style="margin-top:25px;">Négocier cette oeuvre !</a>
                 </div>
               </li>
 </ul>

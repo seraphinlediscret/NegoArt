@@ -41,13 +41,13 @@
          NOS OEUVRES
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Peinture</a>
+            {{-- <a class="dropdown-item" href="#">Peinture</a>
             <a class="dropdown-item" href="#">Sculpture</a>
             <a class="dropdown-item" href="#">Photographie</a>
             <a class="dropdown-item" href="#">Arts numériques</a>
             <a class="dropdown-item" href="#">Gravures</a>
             <a class="dropdown-item" href="#">Design</a>
-            <a class="dropdown-item" href="#">Textiles</a>
+            <a class="dropdown-item" href="#">Textiles</a> --}}
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ asset('/art')}}">Parcourir les oeuvres</a>
         </div>

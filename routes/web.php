@@ -23,15 +23,20 @@ Route::get('/paint', 'PaintController@index');
 
 
 Route::get('/art', 'AllartsController@index');
+// ->middleware('auth');
 
 Route::get('/appli', 'ApplicationController@index');
 
 ////////create artwork//////////
 
 Route::get('/create', 'CreateController@index');
+// ->middleware('auth');
+
+Route::post('/artworks', 'AllartsController@store');
 
 //////////////Users///////////////
 Route::get('/backselfer', 'BackSelferController@index');
+// ->middleware('auth');
 
 Route::get('/registr', function () {
     return view('users/registration');

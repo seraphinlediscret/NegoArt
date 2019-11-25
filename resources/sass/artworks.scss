@@ -1,5 +1,8 @@
 .art-group{
     margin-bottom: 30px;
+    flex-direction: column;
+    margin: auto;
+    display: block;
 }
 
 .btn-nego{
@@ -65,4 +68,17 @@ transition: .5s ease;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+  }
+
+  .list-li{
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .btnart{
+  margin: auto;
+  display: block;
+  width: 20%;
+  text-align: center;
   }

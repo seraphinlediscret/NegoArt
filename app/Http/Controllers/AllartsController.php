@@ -10,4 +10,11 @@ class AllartsController extends Controller
     {
         return view('artworks/allart');
     }
+
+    // public function store()
+    // {
+    //     $picture = request('picture');
+            //$theme = request('theme');
+    //     $artwork = new Artwork();
+    // }
 }
