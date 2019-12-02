@@ -31,8 +31,9 @@ Route::get('/appli', 'ApplicationController@index');
 
 Route::get('/create', 'CreateController@index');
 // ->middleware('auth');
+Route::post('/create', 'CreateController@store');
 
-Route::post('/artworks', 'AllartsController@store');
+Route::get('/artworks', 'AllartsController@list');
 
 //////////////Users///////////////
 Route::get('/backselfer', 'BackSelferController@index');
@@ -41,8 +42,7 @@ Route::get('/backselfer', 'BackSelferController@index');
 Route::get('/registr', function () {
     return view('users/registration');
  });
-
-
+ 
 // Route::get('/galleries', function () {
 //     return view('galleries/galleries');
 // });

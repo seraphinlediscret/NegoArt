@@ -25,6 +25,9 @@ let titleArt = document.getElementById("title-h3");
 let tableNego = document.querySelector(".tableau");
 let pomodoroApp = document.getElementById("pomodoro-app");
 let nbTours = document.getElementById("titre_nbTour");
+let negoIdem = document.getElementById("negoIdem");
+let valueIdem = document.getElementById("valueIdem");
+let valueEnd = document.getElementsByClassName("valueEnd");
 
 //send DATAS//
 let priceShow =document.getElementById("validationCustom01");//prix initial
@@ -54,6 +57,8 @@ let discount;
 let tableHidden = document.getElementById('table-hidden');
 let boxInfo = document.getElementById('allheaderelements');
 let acceptNEGO = document.getElementById("acceptNEGO");
+
+priceIni.textContent = priceShow.value;
 
 /////validation parameters////
 function checkAllValid()
@@ -112,7 +117,6 @@ function openParam() {
     console.log(priceShow.value + " prix initial");
     //push datas parameters//
 
-    priceIni.textContent = priceShow.value;
     showCount.textContent = tourShow.value;
     showTime.textContent = timeShow.value;
 
@@ -157,7 +161,7 @@ function action() {
         trapShow.value--;
         count --;
         console.log( +" nombre de trappes");
-       
+
 
         if (trapShow.value < 0){
         window.location.reload();
@@ -180,8 +184,11 @@ function action() {
             count --;
 
          } else {
-  
+
     nbr = (Number(actionShow) + Number(priceIni.textContent))/2; // remplacer par l'algo de Philippe ( ici test moyenne)
+    console.log(valueEnd + " proposition finale");
+    console.log(nbr + " calcul proposition");
+    valueEnd.textContent = nbr;
     discount = Math.round((Number(priceIni.textContent) - Number(nbr))*100/Number(priceIni.textContent));
     console.log(discount + " % de remise");
     console.log(nbr + " moyenne");
@@ -207,7 +214,6 @@ function action() {
 
     //////////////////TD class///////////////////
  
-
     tr.className = "trTABLE";
     tdOne.className = "blockall countered";//count
     tdThree.className = "blockall buyed";//acheteur
@@ -266,11 +272,21 @@ function action() {
        loader.style.opacity ="";
        yesOrNo.style.display="flex";
 
-        if(showCount.textContent == 0){
+       if(showCount.textContent >= 0){
+            if(Number(nbr) == Number(actionShow)){
+                validAction.style.display="none";
+                yesOrNo.style.display="none";
+                boxInfo.style.display="none";
+                tableNego.style.display="none";
+                loader.style.visibility = "";
+                loader.style.opacity ="";
+                negoIdem.style.display = "flex";
+            }
+         }
+        if(showCount.textContent == 0)
       stop.style.display="none";
-      alert("attention c'est votre dernier tour !")
 
-  } else if(showCount.textContent < 0) {
+     else if(showCount.textContent < 0) {
      clearTimeout(timeOut);
      stop.style.display ="flex";
      validAction.style.display="none";
@@ -287,9 +303,8 @@ function action() {
 }
 }
 ////////conditions//////////////
-
 function acceptNego() {
-alert("Êtes-vous sur de vouloir accepter l'offre de _ _ _ euros");
+alert("Êtes-vous sur de vouloir accepter l'offre de 2000 euros");
 // + "[" + negoprice + "]" + à mettre à la place des _ _ _ Philippe
 }
 
@@ -300,7 +315,7 @@ function refusalNego() {
 }
 ///les boutons///
 function acceptFinal() {
-    alert("Êtes-vous sur de vouloir accepter l'offre de _ _ _ euros");
+    alert("Êtes-vous sur de vouloir accepter l'offre de 2000 euros");
     // + "[" + negoprice + "]" + à mettre à la place des _ _ _ Philippe
 }
 

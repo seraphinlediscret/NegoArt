@@ -35,15 +35,27 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
 
 <h3 id="title-h3">Négociation du prix de l'oeuvre <span id="titleartwork">Peinture Euphorique</span></h3>
 
-
-
 <!--//////////////////NEGOART/////////////////////-->
     <div id="theapplinego"><!--div start-->
 
+      <div id="negoIdem">
+       <div class="textIdem">
+         Bravo votre proposition de <span class="valueIdem valueEnd">2000</span>
+        euros a été acceptée !
+         <br>
+         Confirmez-vous l'achat de cette oeuvre ?
+      </div>
+
+        <div class="d-flex btn-negoIdem">
+        <a href="{{ asset('/pay')}}" class="btn btn-success accept col-5 p-3 font-weight-bold" id="acceptNEGO">Acceptez l'offre</a>
+        <a href="" class="btn btn-danger refus col-5 p-3 font-weight-bold" id="theEND">Refuser l'offre</a>
+        </div>
+      </div>
+
 <!--Popup qui apparait quand le timer est fini-->
-    <div id="stop" class="bg-white text-danger row rounded">
-        <h1 class="text-decoration-none  mr-auto ml-auto font-weight-bold mt-5">!! LA NÉGOCIATION EST TERMINÉ !!</h1>
-       <h2 class="m-auto">Veuillez "accepter" ou "refuser" la dernière proposition de [api Philippe]</h2>
+    <div id="stop" class="row rounded" style="color:red;">
+        <h1 class="text-decoration-none  mr-auto ml-auto font-weight-bold mt-5">!! LA NÉGOCIATION EST TERMINÉE !!</h1>
+       <h2 class="m-auto text-white">Veuillez <span style="color:greenyellow">accepter</span> ou <span style="color:red">refuser</span> la dernière proposition de <span class="valueEnd">2000</span> euros</h2>
         <div id="btnend" class="d-flex justify-content-around col col-12 mb-5 mt-5">
           <a href="{{ asset('/pay')}}" class="btn btn-success accept col-5 p-3 font-weight-bold" id="acceptNEGO">Acceptez l'offre</a>
           <a href="" class="btn btn-danger refus col-5 p-3 font-weight-bold" id="theEND">Refuser l'offre</a>
@@ -64,7 +76,7 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
 
     <div id="divini" class="text-white font-weight-bold p-3 bg-warning rounded">
        <span id="divini-text">Mise à prix:</span>
-       <span id="priceini" class="text-white">3000</span>
+       <span id="priceini" class="text-white"></span>
        <span id="price-currency">€</span>
     </div>
 
@@ -85,7 +97,7 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
    <div id="exitandtour" class="mt-4">
     <div id="titre_nbTour" class="font-weight-bold text-white" style="display:none;">
         <span id="tourcontent">Il vous reste :
-        <span id="count"></span> tours
+        <span id="count" style="color:orange;"></span> tours
         </span>
     </div>
         <a href="" class="btn btn-danger mb-3 mt-5 mb-2" id="exyt">Quitter la negociation</a>
@@ -183,7 +195,7 @@ integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb
 
       <div class="cardinput col-4">
         <label for="validationCustom04" class="titi">Nombre de tours</label>
-        <input type="number" class="form-control field" id="validationCustom04" placeholder="Entrez votre nombre de tours" value="5" required>
+        <input type="number" class="form-control field" id="validationCustom04" placeholder="Entrez votre nombre de tours" value="3" required>
       </div>
 
       <div class="cardinput col-4" style="margin-bottom: 25px;">

@@ -1,9 +1,11 @@
 @extends('layout')
 @section('create-artwork')
 <h2>Créer une oeuvre</h2>
+{{-- <div id="app">
+        <create-artwork></create-artwork>
+       </div> --}}
 
-
-    <form action="/artworks" method="POST" class="d-flex" style="justify-content: space-around;">
+    <form action="/create" method="POST" class="d-flex" style="justify-content: space-around;">
         @csrf
     <div class="characteristics d-flex">
 
@@ -39,12 +41,12 @@
 
         <div class="inputcreate">
             <label for="validationServer05">Matière(s)</label>
-            <input type="text" class="form-control" id="validationServer05" placeholder="Entrez la/les matière(s) de l'oeuvre" name="materials" required>
+            <input type="text" class="form-control" id="validationServer05" placeholder="Entrez la/les matière(s) de l'oeuvre" name="material(s)" required>
         </div>
 
         <div class="inputcreate">
             <label for="validationServer05">Couleur(s)</label>
-            <input type="text" class="form-control" id="validationServer05" placeholder="Entrez la/les couleurs de l'oeuvre" name="colors" required>
+            <input type="text" class="form-control" id="validationServer05" placeholder="Entrez la/les couleurs de l'oeuvre" name="color(s)" required>
         </div>
 
         <div class="inputcreate">
@@ -79,17 +81,17 @@
 
         <div class="inputcreate">
             <label for="validationServer01">Prix de vente négociable</label>
-            <input type="number" class="form-control" id="validationServer01" placeholder="Entrez le prix de vente" value="" name="price_open" required>
+            <input type="number" class="form-control" id="validationServer01" placeholder="Entrez le prix de vente" value="" name="selling_price" required>
         </div>
 
         <div class="inputcreate">
             <label for="validationServer02">Prix minimum</label>
-            <input type="number" class="form-control" id="validationServer02" placeholder="Entrez le prix minimum de vente" value="" name="price_min" required>
+            <input type="number" class="form-control" id="validationServer02" placeholder="Entrez le prix minimum de vente" value="" name="minimum_price" required>
         </div>
 
         <div class="inputcreate">
             <label for="validationServer03">Nombre de tour</label>
-            <input type="number" class="form-control" id="validationServer03" placeholder="Entrez le nombre de tour de négociation" name="nb_tours" required>
+            <input type="number" class="form-control" id="validationServer03" placeholder="Entrez le nombre de tour de négociation" name="number_tours" required>
         </div>
 
         <div class="inputcreate">
@@ -104,15 +106,15 @@
 
         <div class="inputcreate">
             <label for="validationServer05">Nombre de trappe</label>
-            <input type="number" class="form-control" id="validationServer05" placeholder="Entrez le nombre de trappe" name="test_number" required>
+            <input type="number" class="form-control" id="validationServer05" placeholder="Entrez le nombre de trappe" name="number_test" required>
         </div>
-        <button class="btn btn-warning d-block m-auto" type="submit">Valider tous les paramètres</button>
+        <div class="m-auto text-center">
+        <button class="btn btn-success" type="submit">Valider</button>
+        <button type="reset" class="btn btn-danger">Reset</button>
         </div>
+        </div>
+
 </div>
   </form>
- 
-
-  
-
-    
+     
 @endsection

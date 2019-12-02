@@ -95,8 +95,7 @@
     <span>© Negopricing - Tous droits réservés - 2019</span>
   </div>
 </footer>
-
-<script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+<script type="text/javascript" src="/js/app.js" defer></script>
 @yield('script-registration')
 @yield('script-appli')
 @yield('script-connect')

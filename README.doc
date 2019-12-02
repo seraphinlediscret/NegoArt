@@ -1,0 +1,30 @@
+﻿Pour ouvrir sous git :
+git init
+git clone (nom du git)
+se rendre dans le dossier
+composer install
+npm install
+créer .env avec .envexemple
+php artisan key:generate
+php artisan serve
+
+
+
+
+1)nbr = variable utilisée pour un calcul de moyenne.
+Cette variable correspond au calcul de l’algorithme de Philippe.
+! attention ! l'emplacement du nbr dans le
+
+         } else {
+  
+    nbr = (Number(actionShow) + Number(priceIni.textContent))/2; // remplacer par l'algo de Philippe ( ici test moyenne)
+    discount = Math.round((Number(priceIni.textContent) - Number(nbr))*100/Number(priceIni.textContent));
+
+
+est prévu pour éviter des problèmes de calcul.
+
+2)Tout les dossier JS se trouvent dans le public car ces derniers entraient en conflit via webpack,
+
+3) La variable priceMinShow est a utiliser dans le calcul de l’algorithme, elle représente la value de l’input: prix minimum.
+
+4)var want = document.createTextNode(nbr); est la variable appendchild() dans laquelle est crée le résultat du calcul (donc de l’algorithme).

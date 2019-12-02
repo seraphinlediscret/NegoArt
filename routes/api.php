@@ -30,3 +30,9 @@ Route::prefix('1.0')->group(function(){
     });
 
 });
+
+
+// route => api à créer
+// axios => la resource
+// vfor => item.oeuvre
+// item.name

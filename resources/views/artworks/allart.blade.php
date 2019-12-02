@@ -3,7 +3,7 @@
 
 <h2>Toutes les oeuvres</h2>
 
-<div class="d-flex" style="flex-wrap:wrap">
+<div class="d-flex" style="flex-wrap:wrap; justify-content: center;">
 
         <a href="{{ asset('/textile')}}" class="">
             <div class="containerart">
@@ -140,6 +140,12 @@
                                 <div class="textart">Peinture</div>
                                 </div>
                         </div>
+
+                        {{-- <div>
+                            @foreach ($pictures as $picture)
+                            <img src="{{$picture->image}}" alt="">
+                            @endforeach
+                        </div> --}}
 
 
 
