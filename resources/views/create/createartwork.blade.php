@@ -5,72 +5,73 @@
         <create-artwork></create-artwork>
        </div> --}}
 
-    <form action="/create" method="POST" class="d-flex" style="justify-content: space-around;">
+    <form action="" method="POST" class="d-flex" style="justify-content: space-around;">
         @csrf
     <div class="characteristics d-flex">
-
         <div class="m-auto">
 
             <h3>Les caractéristiques de l'oeuvre</h3>
 
         <div class="inputcreate">
-            <label for="validationServer01">Nom de l'oeuvre</label>
-            <input type="text" class="form-control" id="validationServer01" placeholder="Entrez le nom de l'oeuvre" value="" name="name" required>
+            <label for="name">Nom de l'oeuvre</label>
+            <input type="text" class="form-control" id="name-artwork" placeholder="Entrez le nom de l'oeuvre" value="" name="name" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer02">Date de création</label>
-            <input type="date" class="form-control" id="validationServer02" placeholder="Entrez la date de création de l'oeuvre" name="date" value="">
+            <label for="date">Date de création</label>
+            <input type="number" class="form-control" id="date-artwork" placeholder="Entrez la date de création de l'oeuvre" name="date" value="">
         </div>
 
+        <div class="inputcreate">
+                <label for="price">Prix</label>
+                <input type="number" class="form-control" id="price-artwork" placeholder="Entrez le nom de l'auteur de l'oeuvre" name="price" required>
+            </div>
         
         <div class="inputcreate">
-            <label for="validationServer03">Hauteur</label>
-            <input type="text" class="form-control" id="validationServer03" placeholder="Entrez la hauteur de l'oeuvre" name="height" required>
+            <label for="height">Hauteur</label>
+            <input type="text" class="form-control" id="height-artwork" placeholder="Entrez la hauteur de l'oeuvre" name="height" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer04">Largeur</label>
-            <input type="text" class="form-control" id="validationServer04" placeholder="Entrez la largeur de l'oeuvre" name="width" required>
+            <label for="width">Largeur</label>
+            <input type="text" class="form-control" id="width-artwork" placeholder="Entrez la largeur de l'oeuvre" name="width" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer05">Poids</label>
-            <input type="text" class="form-control" id="validationServer05" placeholder="Entrez le poids de l'oeuvre" name="weight" required>
+            <label for="weight">Poids</label>
+            <input type="text" class="form-control" id="weight-artwork" placeholder="Entrez le poids de l'oeuvre" name="weight" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer05">Matière(s)</label>
-            <input type="text" class="form-control" id="validationServer05" placeholder="Entrez la/les matière(s) de l'oeuvre" name="material(s)" required>
+            <label for="material(s)">Matière(s)</label>
+            <input type="text" class="form-control" id="material-artwork" placeholder="Entrez la/les matière(s) de l'oeuvre" name="material(s)" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer05">Couleur(s)</label>
-            <input type="text" class="form-control" id="validationServer05" placeholder="Entrez la/les couleurs de l'oeuvre" name="color(s)" required>
+            <label for="color(s)">Couleur(s)</label>
+            <input type="text" class="form-control" id="color-artwork" placeholder="Entrez la/les couleurs de l'oeuvre" name="color(s)" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer05">Thème</label>
-            <input type="text" class="form-control" id="validationServer05" placeholder="Entrez le thème principal de l'oeuvre" name="theme" required>
+            <label for="theme">Thème</label>
+            <input type="text" class="form-control" id="theme-artwork" placeholder="Entrez le thème principal de l'oeuvre" name="theme" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer05">Auteur</label>
-            <input type="text" class="form-control" id="validationServer05" placeholder="Entrez le nom de l'auteur de l'oeuvre" name="author" required>
+            <label for="author">Auteur</label>
+            <input type="text" class="form-control" id="author-artwork" placeholder="Entrez le nom de l'auteur de l'oeuvre" name="author" required>
         </div>
 
         <div class="form-group inputcreate">
-                <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Entrez la desciption l'oeuvre" name="description"></textarea>
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description-artwork" rows="3" placeholder="Entrez la desciption l'oeuvre" name="description"></textarea>
             </div>
 
             <div class="form-group inputcreate">
-            <label for="exampleFormControlFile1">Ajouter une image</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="picture">
+            <label for="picture">Ajouter une image</label>
+            <input type="file" class="form-control-file" id="picture-artwork" name="picture">
             </div>
-        </div>
-
-           
+        </div>      
 </div>
 
   {{-- parameters negociation --}}
@@ -80,40 +81,34 @@
             <h3>Les paramètres de négociation</h3>
 
         <div class="inputcreate">
-            <label for="validationServer01">Prix de vente négociable</label>
-            <input type="number" class="form-control" id="validationServer01" placeholder="Entrez le prix de vente" value="" name="selling_price" required>
+            <label for="minimum_price">Prix minimum</label>
+            <input type="number" class="form-control" id="minimum-artwork" placeholder="Entrez le prix minimum de vente" value="" name="minimum_price" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer02">Prix minimum</label>
-            <input type="number" class="form-control" id="validationServer02" placeholder="Entrez le prix minimum de vente" value="" name="minimum_price" required>
+            <label for="number_tours">Nombre de tour</label>
+            <input type="number" class="form-control" id="tour-artwork" placeholder="Entrez le nombre de tour de négociation" name="number_tours" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer03">Nombre de tour</label>
-            <input type="number" class="form-control" id="validationServer03" placeholder="Entrez le nombre de tour de négociation" name="number_tours" required>
+            <label for="time">Durée</label>
+            <input type="number" class="form-control" id="time-artwork" placeholder="Entrez la durée de négociation" name="time" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer04">Durée</label>
-            <input type="number" class="form-control" id="validationServer04" placeholder="Entrez la durée de négociation" name="time" required>
+            <label for="test_rate">Taux de trappe</label>
+            <input type="number" class="form-control" id="rate-artwork" placeholder="Entrez le taux de trappe" name="test_rate" required>
         </div>
 
         <div class="inputcreate">
-            <label for="validationServer05">Taux de trappe</label>
-            <input type="number" class="form-control" id="validationServer05" placeholder="Entrez le taux de trappe" name="test_rate" required>
-        </div>
-
-        <div class="inputcreate">
-            <label for="validationServer05">Nombre de trappe</label>
-            <input type="number" class="form-control" id="validationServer05" placeholder="Entrez le nombre de trappe" name="number_test" required>
+            <label for="number_test">Nombre de trappe</label>
+            <input type="number" class="form-control" id="test-artwork" placeholder="Entrez le nombre de trappe" name="number_test" required>
         </div>
         <div class="m-auto text-center">
         <button class="btn btn-success" type="submit">Valider</button>
         <button type="reset" class="btn btn-danger">Reset</button>
         </div>
         </div>
-
 </div>
   </form>
      

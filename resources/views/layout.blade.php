@@ -20,13 +20,39 @@
         alt="logo-negopricing"><span class="title-logo">Art</span></a>
        
     <div class="btn-group p-4">
+        @guest
     <a href="/" class=" btn-login btn btn-outline-secondary">
-        Se connecter
+      Connexion
       </a> 
       <a href="{{ asset('/registr')}}"class= "btn-register btn btn-outline-secondary">Inscription</a>
+      @if (Route::has('registr'))
+     
+      @endif
+      @else
+      <ul>
+      <li class="nav-item dropdown navuser">
+          <a id="navbarDropdown" class="nav-link dropdown-toggle connecttrue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              {{ Auth::user()->name }} <span class="caret"></span>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right logoutitem" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                 onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+          </div>
+      </li>
+  @endguest
+  </ul>
     </div>
   </div>
 </header>
+
 {{-- Navigation --}}
 <nav class="main-nav navbar navbar-expand-lg navbar-dark bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"

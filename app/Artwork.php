@@ -21,4 +21,13 @@ class Artwork extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'price', 'date', 'height', 'width', 'weight', 'material(s)', 'color(s)', 'theme', 'author', 'description', 'picture', 'minimum_price', 'number_tours', 'time', 'test_rate','number_test'
+    ];
 }
