@@ -10,15 +10,15 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('home') }}">
                             @csrf 
-                    <div class="card"> 
-                    <div class="form-group" style="text-align:center">
+                <div class="card"> 
+                    {{-- <div class="form-group" style="text-align:center">
                     <label for="exampleFormControlSelect1" >Je suis</label>
                     <select class="form-control" id="exampleFormControlSelect1">
                     <option id="gallerist-choose">Galeriste</option>
                     <option id="artist-choose">Artiste indépendant</option>
                     <option id="artist-choose">Amateur | Acheteur d'art</option>
                     </select>
-                </div>
+                    </div> --}}
     
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>

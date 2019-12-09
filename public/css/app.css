@@ -11751,6 +11751,7 @@ li {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .containerart:hover {
@@ -12062,6 +12063,7 @@ h3 {
 .thback {
   border: 1px solid black;
   padding: 10px;
+  text-align: center;
 }
 
 .table-one,
@@ -12075,6 +12077,21 @@ h3 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.tddescription {
+  overflow: auto;
+  height: 120px;
+  width: 250px;
+  text-align: left;
+}
+
+.img-bdd {
+  width: 100px;
+}
+
+.thead-back {
+  background-color: goldenrod;
 }
 
 .header-contener {

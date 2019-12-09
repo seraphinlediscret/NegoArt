@@ -28,6 +28,6 @@ class Artwork extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'price', 'date', 'height', 'width', 'weight', 'material(s)', 'color(s)', 'theme', 'author', 'description', 'picture', 'minimum_price', 'number_tours', 'time', 'test_rate','number_test'
+        'name', 'price', 'date', 'height', 'width', 'weight', 'materials', 'colors', 'theme', 'author', 'description', 'picture', 'minimum_price', 'number_tours', 'time', 'test_rate','number_test'
     ];
 }

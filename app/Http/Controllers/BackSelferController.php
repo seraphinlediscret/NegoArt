@@ -10,4 +10,13 @@ class BackSelferController extends Controller
     {
         return view('users/backselfer');
     }
+
+    // public function show($id)
+    // {
+    //     $artworks = App\Artwork::all();
+
+    //     return view('artworks/allart', [
+    //         'artworks' => $artworks
+    //     ]);
+    // }
 }

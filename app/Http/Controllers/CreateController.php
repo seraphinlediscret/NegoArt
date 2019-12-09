@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Artwork;
 use Illuminate\Http\Request;
 
 class CreateController extends Controller
@@ -19,9 +20,12 @@ public function index()
         'theme'=>'required',
         'author'=>'required',
         'description'=>'required',
-        'picture'=>'required',
+        'picture'=>'sometimes|image|max:5000'
      ]);
+
+     $this->storeImage($artwork);
    }
+
 
 //    public function create()
 //     {
@@ -36,7 +40,11 @@ public function index()
    
     public function show($id)
     {
-        //
+        $artworks = App\Artwork::all();
+
+        return view('artworks/allart', [
+        'artworks' => $artworks
+            ]);
     }
     /**
      * Show the form for editing the specified resource.
@@ -69,5 +77,13 @@ public function index()
     {
         //
     
+}
+
+private function storeImage(Artwork $artwork){
+    if (request('picture')) {
+        $artwork->update([
+            'picture'=> request('picture')->store('pictureArtwork', 'public'),
+        ]);
+    }
 }
 }

@@ -41,7 +41,11 @@ class AllartsController extends Controller
      */
     public function show($id)
     {
-        //
+        $artworks = App\Artwork::all();
+
+        return view('artworks/allart', [
+            'artworks' => $artworks
+        ]);
     }
     /**
      * Show the form for editing the specified resource.

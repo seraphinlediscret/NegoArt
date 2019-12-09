@@ -8,7 +8,9 @@
 .trback, .tdback, .thback{
     border: 1px solid black;
     padding: 10px;
+    text-align: center;
 }
+
 
 .table-one, .table-two{
    margin-bottom: 30px;
@@ -18,4 +20,19 @@
     display: block;
     margin: auto;
     width: fit-content;
+}
+
+.tddescription{
+    overflow:auto;
+    height: 120px;
+    width: 250px;
+    text-align: left;
+}
+
+.img-bdd{
+    width: 100px;
+}
+
+.thead-back{
+    background-color: goldenrod;
 }

@@ -16,15 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/sculpture', 'SculptureController@index');
-
 Route::get('/textile', 'TextileController@index');
-
 Route::get('/paint', 'PaintController@index');
-
-
 Route::get('/art', 'AllartsController@index');
 // ->middleware('auth');
-
 Route::get('/appli', 'ApplicationController@index');
 
 ////////create artwork//////////
@@ -32,7 +27,6 @@ Route::get('/appli', 'ApplicationController@index');
 Route::get('/create', 'CreateController@index');
 Route::resource('/created', 'CreateController');
 // ->middleware('auth');
-
 Route::post('/create', function () {
     $artwork = App\Artwork::create([
         'name'=> request('name'),
@@ -42,24 +36,37 @@ Route::post('/create', function () {
         'height'=> request('height'),
         'width'=> request('width'),
         'weight'=> request('weight'),
-        'material(s)'=> request('material(s)'),
-        'color(s)'=> request('color(s)'),
+        'materials'=> request('materials'),
+        'colors'=> request('colors'),
         'author'=> request('author'),
         'description'=> request('description'),
-        'picture'=> request('picture'),
+        'picture'=> request('picture')->store('pictureArtwork', 'public'),
         'minimum_price'=> request('minimum_price'),
         'number_tours'=> request('number_tours'),
         'time'=> request('time'),
         'test_rate'=> request('test_rate'),
         'number_test'=> request('number_test')
     ]);
-    return view('artworks/allart');
+    return view('create/createartwork');
+ });
+Route::get('/art', function () {
+    $artworks = App\Artwork::all();
+
+    return view('artworks/allart', [
+        'artworks' => $artworks
+    ]);
  });
 
-Route::get('/artworks', 'AllartsController@list');
+ Route::get('/backselfer', function () {
+    $artworks = App\Artwork::all();
+
+    return view('users/backselfer', [
+        'artworks' => $artworks
+    ]);
+ });
 
 //////////////Users///////////////
-Route::get('/backselfer', 'BackSelferController@index');
+// Route::get('/backselfer', 'BackSelferController@index');
 // ->middleware('auth');
 
 Route::resource('/admin/users', 'Admin\UsersController');
@@ -68,28 +75,6 @@ Route::get('/registr', function () {
     return view('users/registration');
  });
  
-// Route::get('/galleries', function () {
-//     return view('galleries/galleries');
-// });
-
-// Route::get('/rules', function () {
-//     return view('rules/rules');
-// });
-
-
-
-
-// Route::get('/connexion', function () {
-//     return view('users/connectpage');
-// });
-
-
-
-Route::get('/buyer', function () {
-    return view('users/buyer');
- });
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

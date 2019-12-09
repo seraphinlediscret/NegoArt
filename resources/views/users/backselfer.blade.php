@@ -4,9 +4,10 @@
 
 <div class="tablebackselfer">
 <table class="table-one">
-<thead>
+<thead class="thead-back">
     <tr class="text-white trback">
       <th scope="col" class="thback"><div class="head-table">N°</div></th>
+      <th scope="col" class="thback"><div class="head-table">Titre de l'oeuvre</div></th>
       <th scope="col" class="thback"><div class="head-table">Illustration</div></th>
       <th scope="col" class="thback"><div class="head-table">Hauteur</div></th>
       <th scope="col" class="thback"><div class="head-table">Largeur</div></th>
@@ -20,66 +21,75 @@
   </thead>
 
   <tbody id="theTABLE">
+      @foreach ($artworks as $artwork )
         <tr class="trback">
+            
           <td class="tdback">
          <div>
-        N° BDD(id)
+            {{$artwork->id}}
         </div>
           </td>
 
           <td class="tdback">
+                <div>
+                    {{$artwork->name}}
+                </div>
+                </td>
+
+          <td class="tdback">
          <div>
-        Illustration BDD
+            <img class="img-bdd" src="{{asset('storage/'.$artwork->picture)}}" alt="">
         </div>
          </td>
 
           <td class="tdback">
           <div>
-        Hauteur BDD
+              {{$artwork->height}}
          </div>
          </td>
 
           <td class="tdback">
           <div>
-        Largeur BDD
+              {{$artwork->width}}
           </div>
           </td>
 
           <td class="tdback">
          <div>
-        Poids BDD
+            {{$artwork->weight}}
          </div>
          </td>
 
           <td class="tdback">
          <div>
-        Matière BDD
+            {{$artwork->materials}}
          </div>
          </td>
 
           <td class="tdback">
          <div>
-        Couleur BDD
+            {{$artwork->colors}}
          </div>
          </td>
 
           <td class="tdback">
           <div>
-        thèmes BDD
+              {{$artwork->theme}}
          </div>
          </td>
 
-          <td class="tdback">
-          <div>
-        Descriptif BDD
+          <td class="tdback ">
+          <div class="tddescription">
+              {{$artwork->description}}
           </div>
           </td>
 
            <td class="tdback">
            <div>
-        Auteur BDD
+              {{$artwork->author}}
           </div>
           </td>
+          @endforeach
 </tr>
 
 
@@ -87,11 +97,11 @@
 </table>
 
 <table class="table-two">
-<thead>
+<thead class="thead-back">
         <tr class="trback">
                 <th scope="col" class="thback"><div class="head-table">N°</div></th>
-                <th scope="col" class="thback"><div class="head-table">Prix de vente négociable</div></th>
-                <th scope="col" class="thback"><div class="head-table">Prix maximum</div></th>
+                <th scope="col" class="thback"><div class="head-table">Prix de vente négociable(€)</div></th>
+                <th scope="col" class="thback"><div class="head-table">Prix minimum(€)</div></th>
                 <th scope="col" class="thback"><div class="head-table">Nombre de tours</div></th>
                 <th scope="col" class="thback"><div class="head-table">Durée</div></th>
                 <th scope="col" class="thback"><div class="head-table">Nombre de trappes</div></th>
@@ -100,49 +110,51 @@
 </thead>
 
 <tbody id="theTABLE">
-<tr>
+@foreach ($artworks as $artwork )
+    <tr>
+    
+        <td class="tdback">
+            <div>
+                {{$artwork->id}}
+            </div>
+            </td>
 
-    <td class="tdback">
-        <div>
-       N°BDD(id)
-        </div>
-        </td>
-
         <td class="tdback">
         <div>
-       Prix de vente négociable BDD
+            {{$artwork->price}}€
         </div>
         </td>
       
         <td class="tdback">
         <div>
-        Prix maximum BDD
+            {{$artwork->minimum_price}}€
         </div>
         </td>
       
         <td class="tdback">
         <div>
-        Nombre de tours BDD
+            {{$artwork->number_tours}}
         </div>
         </td>
       
         <td class="tdback">
         <div>
-        Durée BDD
+            {{$artwork->time}} minutes
         </div>
         </td>
       
         <td class="tdback">
         <div>
-        Nombre de trappes BDD
+            {{$artwork->number_test}}
         </div>
         </td>
       
         <td class="tdback">
         <div>
-        Taux de trappes BDD
+            {{$artwork->test_rate}}%
         </div>
-        </td>       
+        </td>
+        @endforeach       
 </tr>
 </tbody>
 
