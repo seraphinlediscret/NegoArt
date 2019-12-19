@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Artwork;
 
 class BackSelferController extends Controller
 {
-    public function index()
+    public function index(Artwork $id)
     {
-        return view('users/backselfer');
+        $artworks = Artwork::all();
+
+        return view('users/backselfer', [
+            'artworks' => $artworks
+        ]);
     }
 
-    // public function show($id)
-    // {
-    //     $artworks = App\Artwork::all();
-
-    //     return view('artworks/allart', [
-    //         'artworks' => $artworks
-    //     ]);
-    // }
+    public function show()
+    {
+       
+    }
 }

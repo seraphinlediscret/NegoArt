@@ -12,7 +12,7 @@ public function index()
     return view('create/createartwork');
    }
 
-   public function store()
+   public function store(Artwork $artwork)
    {
      request()->validate([
         'name'=>'required',
@@ -24,13 +24,34 @@ public function index()
      ]);
 
      $this->storeImage($artwork);
-   }
+
+//      $artwork = Artwork::create([
+//         'name'=> request('name'),
+//         'price'=> request('price'),
+//         'theme'=> request('theme'),
+//         'date'=> request('date'),
+//         'height'=> request('height'),
+//         'width'=> request('width'),
+//         'weight'=> request('weight'),
+//         'materials'=> request('materials'),
+//         'colors'=> request('colors'),
+//         'author'=> request('author'),
+//         'description'=> request('description'),
+//         'picture'=> request('picture')->store('pictureArtwork', 'public'),
+//         'minimum_price'=> request('minimum_price'),
+//         'number_tours'=> request('number_tours'),
+//         'time'=> request('time'),
+//         'test_rate'=> request('test_rate'),
+//         'number_test'=> request('number_test')
+//     ]);
+//     return view('create/createartwork');
+    }
 
 
-//    public function create()
-//     {
-//         //
-//     }
+    public function create(Artwork $artwork)
+    {
+       
+    }
 //     /**
 //      * Store a newly created resource in storage.
 //      *
@@ -40,11 +61,7 @@ public function index()
    
     public function show($id)
     {
-        $artworks = App\Artwork::all();
-
-        return view('artworks/allart', [
-        'artworks' => $artworks
-            ]);
+        
     }
     /**
      * Show the form for editing the specified resource.

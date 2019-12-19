@@ -5,7 +5,7 @@
         <create-artwork></create-artwork>
        </div> --}}
 
-    <form action="" method="POST" enctype="multipart/form-data" class="d-flex" style="justify-content: space-around;">
+    <form action="" method="POST" enctype="multipart/form-data" class="d-flex forms" style="justify-content: space-around;">
         @csrf
     <div class="characteristics d-flex">
         <div class="m-auto">
@@ -19,7 +19,7 @@
 
         <div class="inputcreate">
             <label for="date">Année de création</label>
-            <input type="number" class="form-control" id="date-artwork" placeholder="Entrez la date de création de l'oeuvre" name="date" value="">
+            <input type="number" class="form-control" id="date-artwork" placeholder="Entrez l'année de création de l'oeuvre" name="date" value="">
         </div>
 
         <div class="inputcreate">
@@ -83,30 +83,38 @@
         <div class="">
             <h3>Les paramètres de négociation</h3>
 
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input " id="checkgood" value="nego">
+            <label class="form-check-label" for="checkgood">Voulez-vous mettre cette oeuvre à négocier</label>
+        </div>
+
+<div id="fornegociation">
         <div class="inputcreate">
             <label for="minimum_price">Prix minimum(€)</label>
-            <input type="number" class="form-control" id="minimum-artwork" placeholder="Entrez le prix minimum de vente" value="" name="minimum_price" required>
+            <input type="number" class="form-control" id="minimum-artwork" placeholder="Entrez le prix minimum de vente" value="" name="minimum_price">
         </div>
 
         <div class="inputcreate">
             <label for="number_tours">Nombre de tour</label>
-            <input type="number" class="form-control" id="tour-artwork" placeholder="Entrez le nombre de tour de négociation" name="number_tours" required>
+            <input type="number" class="form-control" id="tour-artwork" placeholder="Entrez le nombre de tour de négociation" name="number_tours">
         </div>
 
         <div class="inputcreate">
             <label for="time">Durée(en minutes)</label>
-            <input type="number" class="form-control" id="time-artwork" placeholder="Entrez la durée de négociation" name="time" required>
+            <input type="number" class="form-control" id="time-artwork" placeholder="Entrez la durée de négociation" name="time">
         </div>
 
         <div class="inputcreate">
             <label for="test_rate">Taux de trappe(%)</label>
-            <input type="number" class="form-control" id="rate-artwork" placeholder="Entrez le taux de trappe" name="test_rate" required>
+            <input type="number" class="form-control" id="rate-artwork" placeholder="Entrez le taux de trappe" name="test_rate">
         </div>
 
         <div class="inputcreate">
             <label for="number_test">Nombre de trappe</label>
-            <input type="number" class="form-control" id="test-artwork" placeholder="Entrez le nombre de trappe" name="number_test" required>
+            <input type="number" class="form-control" id="test-artwork" placeholder="Entrez le nombre de trappe" name="number_test">
         </div>
+    </div>
+
         <div class="m-auto text-center">
         <button class="btn btn-success" type="submit">Valider</button>
         <button type="reset" class="btn btn-danger">Reset</button>
@@ -115,4 +123,7 @@
 </div>
   </form>
      
+@endsection
+@section('script-registration')
+<script type="text/javascript" src="{{ asset('js/create.js') }}" defer></script>
 @endsection

@@ -95,7 +95,7 @@
 
   </tbody>
 </table>
-
+<div style="margin-bottom:20px;margin-top:20px;">
 <table class="table-two">
 <thead class="thead-back">
         <tr class="trback">
@@ -160,5 +160,6 @@
 
 </table>
 </div>
-<a href="{{ asset('/create')}}" class="btn btn-danger d-block m-auto" style="width: 15%;">Créer une oeuvre!</a>
+</div>
+<a href="{{ asset('/create')}}" class="btn btn-danger d-block m-auto" style="width: 160px;">Créer une oeuvre !</a>
 @endsection

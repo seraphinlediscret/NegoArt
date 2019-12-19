@@ -14,18 +14,19 @@
 Route::get('/', function () {
     return view('auth/login');
 });
-
 Route::get('/sculpture', 'SculptureController@index');
 Route::get('/textile', 'TextileController@index');
 Route::get('/paint', 'PaintController@index');
 Route::get('/art', 'AllartsController@index');
+Route::get('/art/{artwork}', 'AllartsController@show');
+Route::get('/backselfer', 'BackSelferController@index');
 // ->middleware('auth');
 Route::get('/appli', 'ApplicationController@index');
 
 ////////create artwork//////////
-
 Route::get('/create', 'CreateController@index');
 Route::resource('/created', 'CreateController');
+
 // ->middleware('auth');
 Route::post('/create', function () {
     $artwork = App\Artwork::create([
@@ -49,32 +50,14 @@ Route::post('/create', function () {
     ]);
     return view('create/createartwork');
  });
-Route::get('/art', function () {
-    $artworks = App\Artwork::all();
-
-    return view('artworks/allart', [
-        'artworks' => $artworks
-    ]);
- });
-
- Route::get('/backselfer', function () {
-    $artworks = App\Artwork::all();
-
-    return view('users/backselfer', [
-        'artworks' => $artworks
-    ]);
- });
 
 //////////////Users///////////////
-// Route::get('/backselfer', 'BackSelferController@index');
-// ->middleware('auth');
 
-Route::resource('/admin/users', 'Admin\UsersController');
+Route::resource('/admin/users', 'Admin/UsersController');
+
+Auth::routes();
 
 Route::get('/registr', function () {
     return view('users/registration');
  });
- 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

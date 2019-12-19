@@ -38,12 +38,14 @@
         </a>
 
 @foreach ($artworks as $artwork )
+<a href="/artwork/{{ $artwork->id}}" class="showart">
         <div class="containerart">
             <img src="{{asset('storage/'.$artwork->picture)}}" alt="image de l'oeuvre" class="img-circle img-responsive allimg">
                 <div class="middle">
                 <div class="textart">{{$artwork->theme}}</div>
                 </div>
         </div>
+</a>
 @endforeach         
 </div>
 @endsection

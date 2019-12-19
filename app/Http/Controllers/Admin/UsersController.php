@@ -15,7 +15,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return "liste de mes utilisateurs";
+        
     }
 
     /**
@@ -47,7 +47,7 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-        //
+        // 
     }
 
     /**

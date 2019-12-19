@@ -16,7 +16,7 @@
 <header>
   <div class="header-contener d-flex justify-content-between ">
     
-    <a href="/" style="display: flex;width: 25%;margin: auto;"><span class="title-logo">Neg</span><img class="header-img img-fluid" src="../img/logos/svg/negopricing-logo-pure.svg"
+    <a href="/" style="display: flex;width: 25%;" class="theTitle"><span class="title-logo">Neg</span><img class="header-img img-fluid" src="../img/logos/svg/negopricing-logo-pure.svg"
         alt="logo-negopricing"><span class="title-logo">Art</span></a>
        
     <div class="btn-group p-4">
@@ -73,8 +73,8 @@
             <a class="dropdown-item" href="#">Arts numériques</a>
             <a class="dropdown-item" href="#">Gravures</a>
             <a class="dropdown-item" href="#">Design</a>
-            <a class="dropdown-item" href="#">Textiles</a> --}}
-            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Textiles</a>
+            <div class="dropdown-divider"></div> --}}
             <a class="dropdown-item" href="{{ asset('/art')}}">Parcourir les oeuvres</a>
         </div>
         
@@ -88,7 +88,7 @@
     </ul>
   </div>
 </nav>
-  <main class="ml-3">
+  <main class="m-auto">
         @yield('content')
         {{-- @yield('application') --}}
         @yield('connect')
